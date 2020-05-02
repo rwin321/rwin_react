@@ -1,0 +1,40 @@
+.nav {
+  grid-area: n;
+  background-color: rgba(59, 15, 216, 0.507);
+  padding: 15px;
+}
+.item a {
+  font-family: Georgia;
+  text-decoration-line: unset;
+  letter-spacing: 1px;
+  color: white;
+  margin-left: 5px;
+}
+.item a.active {
+  color: rgb(54, 10, 36);
+}
+.sideBarFriendTitle {
+  padding: 50px 0 0 40px;
+}
+.sideBarFriendTitleName{
+  font-family: "Franklin Gothic Book";
+  letter-spacing: 1px;
+  font-size: larger;
+}
+.sideBarFriendContent{
+  padding: 5px 0 0 0;
+}
+.sideBarFriendName {
+
+}
+.tabName {
+  padding-left: 10px;
+}
+.sideBarFriendLogo{
+
+}
+.imgFriend{
+  width: 30px;
+  border-radius: 50%;
+  padding: 10px;
+}
