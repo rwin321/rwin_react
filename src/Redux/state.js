@@ -58,4 +58,5 @@ export let createMessage = (messageText) => {
     state.dialogsPage.messages.push(newMessage);
 }
 
+
 export default state
