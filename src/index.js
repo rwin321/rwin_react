@@ -5,12 +5,14 @@ import App from './App';
 import * as serviceWorker from './serviceWorker';
 import state from './Redux/state';
 import {addPost} from './Redux/state';
+import {createMessage} from './Redux/state';
 
 addPost('rwin_just_Win!')
+createMessage('rwin')
 
     ReactDOM.render(
   <React.StrictMode>
-    <App state={state} addPost={addPost}/>
+    <App state={state} addPost={addPost} createMessage={createMessage}/>
   </React.StrictMode>,
   document.getElementById('root')
 );
