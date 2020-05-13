@@ -1,7 +1,6 @@
-const ADD_POST = 'ADD-POST';
-const UPDATE_NEW_POST_TEXT = 'UPDATE-NEW-POST-TEXT';
-const CREATE_MESSAGE = 'CREATE-MESSAGE';
-const UPDATE_NEW_MESSAGE_TEXT = 'UPDATE-NEW-MESSAGE-TEXT';
+import profileReducer from "./profile-reducer";
+import dialogsReducer from "./dialogs-reducer";
+import sidebarReducer from "./sidebar-reducer";
 
 let store = {
     _state: {
@@ -47,6 +46,7 @@ let store = {
     _callSubscriber() {
         console.log('rwin_justwin');
     },
+
     // getState, subscribe - не меняют наши данные
     getState() {
         return this._state;
@@ -55,38 +55,16 @@ let store = {
         this._callSubscriber = observer;
     },
 
-    dispatch(action) { // { type: ADD-POST }
-        if (action.type === ADD_POST) {
-            let newPost = {
-                id: 5,
-                message: this._state.profilePage.newPostText,
-                likesCount: 0
-            };
-            this._state.profilePage.posts.push(newPost);
-            this._state.profilePage.newPostText = '';
-            this._callSubscriber(this._state);
-        } else if (action.type === UPDATE_NEW_POST_TEXT) {
-            this._state.profilePage.newPostText = action.newText;
-            this._callSubscriber(this._state);
-    } else if (action.type === CREATE_MESSAGE) {
-            let newMessage = this._state.dialogsPage.newMessageText;
-            this._state.dialogsPage.newMessageText = '';
-            this._state.dialogsPage.messages.push( {id: 9, message: newMessage} );
-            this._callSubscriber(this._state);
-        } else if (action.type === UPDATE_NEW_MESSAGE_TEXT) {
-            this._state.dialogsPage.newMessageText = action.newText;
-            this._callSubscriber(this._state);
-        }
+    // { type: ADD-POST }
+    dispatch(action) {
+        //Делигировали преобразования веток state -> reudceram
+        this._state.profilePage = profileReducer(this._state.profilePage, action);
+        this._state.dialogsPage = dialogsReducer(this._state.dialogsPage, action);
+        this._state.sidebar = sidebarReducer(this._state.sidebar, action);
+        //Но callback єто уже responsibility нашего store
+        this._callSubscriber(this._state);
 }
 }
-
-export const addPostActionCreator = () => ({type: ADD_POST})
-export const updateNewPostTextActionCreator = (text) =>
-    ({ type: UPDATE_NEW_POST_TEXT, newText: text })
-
-export const sendMessageCreator = () => ({type: CREATE_MESSAGE})
-export const updateNewMessageTextCreator = (text) =>
-    ({ type: UPDATE_NEW_MESSAGE_TEXT, newText: text })
 
 
 export default store
