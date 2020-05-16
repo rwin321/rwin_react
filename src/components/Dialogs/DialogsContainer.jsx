@@ -2,9 +2,9 @@ import React from 'react'
 
 import {sendMessageCreator, updateNewMessageTextCreator} from "../../Redux/dialogs-reducer";
 import Dialogs from "./Dialogs";
-import StoreContext from "../../StoreContext";
+import {connect} from "react-redux";
 
-const DialogsContainer = () => {
+/*const DialogsContainer = () => {
 
 
     return <StoreContext.Consumer>
@@ -25,6 +25,24 @@ const DialogsContainer = () => {
         }
     }
     </StoreContext.Consumer>
+}*/
+
+let mapStateToProps = (state) => {
+    return {
+        dialogsPage: state.dialogsPage
+    }
 }
+let mapDispatchToProps = (dispatch) => {
+    return {
+        sendMessageCreator: () => {
+            dispatch(sendMessageCreator())
+        },
+        updateNewMessageText: (newText) => {
+            dispatch(updateNewMessageTextCreator(newText))
+        }
+    }
+}
+
+const DialogsContainer = connect(mapStateToProps, mapDispatchToProps)(Dialogs)
 
 export default DialogsContainer
