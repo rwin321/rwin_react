@@ -1,0 +1,115 @@
+From 2a39f6bca4bd1a08e02fb2636689b3e1b6750c6a Mon Sep 17 00:00:00 2001
+From: ervin <rwin321@gmail.com>
+Date: Fri, 29 May 2020 15:05:58 +0300
+Subject: refactored USERS.JS into CLASS COMPONENT + created USERS at NavBar
+
+
+diff --git a/src/components/Navbar/Navbar.jsx b/src/components/Navbar/Navbar.jsx
+index 5d260cf..30a9763 100644
+--- a/src/components/Navbar/Navbar.jsx
++++ b/src/components/Navbar/Navbar.jsx
+@@ -11,8 +11,9 @@ const Navbar = () => {
+             <div className={s.item}>
+                 <NavLink to='/dialogs' activeClassName={s.active}>Messages</NavLink>
+             </div>
++            
+             <div className={s.item}>
+-                <NavLink to='/news' activeClassName={s.active}>News</NavLink>
++                <NavLink to='/users' activeClassName={s.active}>Users</NavLink>
+             </div>
+             <div className={s.item}>
+                 <NavLink to='/music' activeClassName={s.active}>Music</NavLink>
+diff --git a/src/components/Users/Users.js b/src/components/Users/Users.js
+index eb82ee5..e85831f 100644
+--- a/src/components/Users/Users.js
++++ b/src/components/Users/Users.js
+@@ -3,24 +3,22 @@ import styles from './users.module.css';
+ import * as axios from 'axios';
+ import userPhoto from './../../assets/imgs/user.png'
+ 
+-let Users = (props) => {
++class Users extends React.Component {
+ 
+-    let getUsers = () => {
+-        if (props.users.length === 0) {
+-            axios.get('https://social-network.samuraijs.com/api/1.0/users')
+-                .then(response => {
+-                    props.setUsers(response.data.items);
+-                })
+-        }
+-    }
++    constructor(props) {
++        super(props);
+ 
+-    return (
+-        <div>
+-            
+-            <button onClick={getUsers}>get users</button>
++        axios.get('https://social-network.samuraijs.com/api/1.0/users')
++            .then(response => {
++                this.props.setUsers(response.data.items);
++            });
++    }
+ 
+-            {
+-                props.users.map(u => <div key={u.id}>
++        render()
++        {
++            return <div>
++                {
++                    this.props.users.map(u => <div key={u.id}>
+                     <span>
+                         <div>
+                             <img src={u.photos.small != null ? u.photos.small : userPhoto}
+@@ -29,14 +27,14 @@ let Users = (props) => {
+                         <div>
+                             {u.followed
+                                 ? <button onClick={() => {
+-                                    props.unFollow(u.id)
++                                    this.props.unFollow(u.id)
+                                 }}>unfollow</button>
+                                 : <button onClick={() => {
+-                                    props.follow(u.id)
++                                    this.props.follow(u.id)
+                                 }}>follow</button>}
+                         </div>
+                     </span>
+-                    <span>
++                        <span>
+                         <span>
+                             <div>{u.name}</div>
+                             <div>{u.status}</div>
+@@ -46,10 +44,12 @@ let Users = (props) => {
+                             <div>{'u.location.country'}</div>
+                         </span>
+                     </span>
+-                </div>)
+-            }
+-        </div>
+-    )
+-}
++                    </div>)
++                }
++            </div>
++        }
++    }
+ 
+-export default Users;
+\ No newline at end of file
++    export
++    default
++    Users;
+\ No newline at end of file
+diff --git a/src/components/Users/UsersContainer.js b/src/components/Users/UsersContainer.js
+index 3aef311..9ae79e4 100644
+--- a/src/components/Users/UsersContainer.js
++++ b/src/components/Users/UsersContainer.js
+@@ -1,7 +1,7 @@
+ import React from 'react';
+ import {connect} from "react-redux";
+-import Users from "./Users";
+ import {followAC, setUsersAC, unfollowAC} from "../../Redux/users-reducer";
++import Users from './Users'
+ 
+ let mapStateToProps = (state) => {
+     return {
