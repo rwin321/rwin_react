@@ -19,10 +19,10 @@ index 5d260cf..30a9763 100644
              </div>
              <div className={s.item}>
                  <NavLink to='/music' activeClassName={s.active}>Music</NavLink>
-diff --git a/src/components/Users/Users.js b/src/components/Users/Users.js
+diff --git a/src/components/Users/UsersAPIComponent.js b/src/components/Users/UsersAPIComponent.js
 index eb82ee5..e85831f 100644
---- a/src/components/Users/Users.js
-+++ b/src/components/Users/Users.js
+--- a/src/components/Users/UsersAPIComponent.js
++++ b/src/components/Users/UsersAPIComponent.js
 @@ -3,24 +3,22 @@ import styles from './users.module.css';
  import * as axios from 'axios';
  import userPhoto from './../../assets/imgs/user.png'
