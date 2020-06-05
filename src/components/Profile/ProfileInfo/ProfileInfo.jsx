@@ -8,6 +8,7 @@ const ProfileInfo = (props) => {
     }
 
     return (
+
         <div>
             <div>
                     <img className={s.profileImg}
