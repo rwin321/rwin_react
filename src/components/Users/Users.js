@@ -3,6 +3,7 @@ import styles from "./users.module.css";
 import userPhoto from "../../assets/imgs/user.png";
 import {NavLink} from "react-router-dom";
 import * as axios from "axios";
+import {followQuery, unFollowQuery, usersAPI} from "../../api/api";
 
 let Users = (props) => {
 
@@ -35,29 +36,15 @@ let Users = (props) => {
                         <div>
                             {u.followed
                                 ? <button onClick={() => {
-                                    axios.delete(`https://social-network.samuraijs.com/api/1.0/follow/${u.id}`, {
-                                        withCredentials: true,
-                                        headers: {
-                                            'API-KEY': 'eb0884f2-5d3d-45fd-b080-716776e9e6d8'
-                                        }
-                                    })
-                                        .then(response => {
-                                            if (response.data.resultCode == 0) {
+                                    usersAPI.unFollowQuery(u.id).then(data => {
+                                            if (data.resultCode == 0) {
                                                 props.unFollow(u.id);
                                             }
                                         })
-
-
                                 }}>unfollow</button>
                                 : <button onClick={() => {
-                                    axios.post(`https://social-network.samuraijs.com/api/1.0/follow/${u.id}`, {}, {
-                                    withCredentials: true,
-                                    headers: {
-                                            'API-KEY': 'eb0884f2-5d3d-45fd-b080-716776e9e6d8'
-                                        }
-                                    })
-                                        .then(response => {
-                                            if (response.data.resultCode == 0) {
+                                    usersAPI.followQuery(u.id).then(data => {
+                                            if (data.resultCode == 0) {
                                                 props.follow(u.id);
                                             }
                                         })
