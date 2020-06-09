@@ -6,7 +6,7 @@ import {
     setCurrentPage,
     setPreloader,
     setTotalUsersCount,
-    setUsers,
+    setUsers, toogleFollowingProgress,
     unFollow
 } from "../../Redux/users-reducer";
 import Preloader from "../../common/Preloader/Preloader";
@@ -27,7 +27,9 @@ class UsersAPIComponent extends React.Component {
     onPageChanged = (pageNumber) => {
         this.props.setCurrentPage(pageNumber);
         this.props.setPreloader(true);
-        usersAPI.getUsers(pageNumber, this.props.pageSize).then(data => {
+        usersAPI
+            .getUsers(pageNumber, this.props.pageSize)
+            .then(data => {
                 this.props.setPreloader(false);
                 this.props.setUsers(data.items);
             })
@@ -44,6 +46,8 @@ class UsersAPIComponent extends React.Component {
                     users={this.props.users}
                     follow={this.props.follow}
                     unFollow={this.props.unFollow}
+                    toogleFollowingProgress={this.props.toogleFollowingProgress}
+                    followingInProgress={this.props.followingInProgress}
             />
         </>
     }
@@ -57,7 +61,8 @@ let mapStateToProps = (state) => {
         pageSize: state.usersPage.pageSize,
         totalUserCount: state.usersPage.totalUserCount,
         currentPage: state.usersPage.currentPage,
-        isFetching: state.usersPage.isFetching
+        isFetching: state.usersPage.isFetching,
+        followingInProgress: state.usersPage.followingInProgress
     }
 }
 /*let mapDispatchToProps = (dispatch) => {
@@ -85,4 +90,5 @@ let mapStateToProps = (state) => {
     }
 }*/
 
-export default connect(mapStateToProps, {follow, unFollow, setUsers, setCurrentPage, setTotalUsersCount, setPreloader})(UsersAPIComponent);
+export default connect(mapStateToProps,
+    {follow, unFollow, setUsers, setCurrentPage, setTotalUsersCount, setPreloader, toogleFollowingProgress})(UsersAPIComponent);

@@ -2,8 +2,8 @@ import React from 'react';
 import styles from "./users.module.css";
 import userPhoto from "../../assets/imgs/user.png";
 import {NavLink} from "react-router-dom";
-import * as axios from "axios";
-import {followQuery, unFollowQuery, usersAPI} from "../../api/api";
+import {usersAPI} from "../../api/api";
+
 
 let Users = (props) => {
 
@@ -35,19 +35,23 @@ let Users = (props) => {
                         </div>
                         <div>
                             {u.followed
-                                ? <button onClick={() => {
+                                ? <button disabled={props.followingInProgress.some(id => id === u.id)} onClick={() => {
+                                    props.toogleFollowingProgress(true, u.id)
                                     usersAPI.unFollowQuery(u.id).then(data => {
-                                            if (data.resultCode == 0) {
-                                                props.unFollow(u.id);
-                                            }
-                                        })
+                                        if (data.resultCode == 0) {
+                                            props.follow(u.id);
+                                        }
+                                        props.toogleFollowingProgress(false, u.id)
+                                    })
                                 }}>unfollow</button>
-                                : <button onClick={() => {
+                                : <button disabled={props.followingInProgress.some(id => id === u.id)} onClick={() => {
+                                    props.toogleFollowingProgress(true, u.id)
                                     usersAPI.followQuery(u.id).then(data => {
-                                            if (data.resultCode == 0) {
-                                                props.follow(u.id);
-                                            }
-                                        })
+                                        if (data.resultCode == 0) {
+                                            props.follow(u.id);
+                                        }
+                                        props.toogleFollowingProgress(false, u.id)
+                                    })
                                 }}>follow</button>}
                         </div>
                     </span>
@@ -60,7 +64,7 @@ let Users = (props) => {
                             <div>{'u.location.city'},</div>
                             <div>{'u.location.country'}</div>
                         </span>
-                    </span>
+                </span>
             </div>)
         }
     </div>
