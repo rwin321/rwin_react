@@ -2,37 +2,30 @@ import React from 'react';
 import {connect} from "react-redux";
 import Users from "./Users";
 import {
-    follow,
-    setCurrentPage,
-    setPreloader,
-    setTotalUsersCount,
-    setUsers, toogleFollowingProgress,
+    follow, getUsers,
+    setCurrentPage,toogleFollowingProgress,
     unFollow
 } from "../../Redux/users-reducer";
 import Preloader from "../../common/Preloader/Preloader";
-import {usersAPI} from "../../api/api";
 
 
 class UsersAPIComponent extends React.Component {
 
     componentDidMount() {
-        this.props.setPreloader(true);
+        this.props.getUsers(this.props.currentPage, this.props.pageSize);
+        //refactored api query according with getUsersThunkCreator; this how it was:
+        /*        this.props.setPreloader(true);
         usersAPI.getUsers(this.props.currentPage, this.props.pageSize).then(data => {
                 this.props.setPreloader(false);
                 this.props.setUsers(data.items);
                 this.props.setTotalUsersCount(data.totalCount);
-            })
+            })*/
     }
 
     onPageChanged = (pageNumber) => {
-        this.props.setCurrentPage(pageNumber);
-        this.props.setPreloader(true);
-        usersAPI
-            .getUsers(pageNumber, this.props.pageSize)
-            .then(data => {
-                this.props.setPreloader(false);
-                this.props.setUsers(data.items);
-            })
+
+        this.props.getUsers(pageNumber, this.props.pageSize);
+
     }
 
 
@@ -46,7 +39,6 @@ class UsersAPIComponent extends React.Component {
                     users={this.props.users}
                     follow={this.props.follow}
                     unFollow={this.props.unFollow}
-                    toogleFollowingProgress={this.props.toogleFollowingProgress}
                     followingInProgress={this.props.followingInProgress}
             />
         </>
@@ -91,4 +83,4 @@ let mapStateToProps = (state) => {
 }*/
 
 export default connect(mapStateToProps,
-    {follow, unFollow, setUsers, setCurrentPage, setTotalUsersCount, setPreloader, toogleFollowingProgress})(UsersAPIComponent);
+    {follow, unFollow, setCurrentPage, toogleFollowingProgress, getUsers})(UsersAPIComponent);
