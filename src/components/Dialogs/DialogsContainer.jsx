@@ -4,6 +4,7 @@ import {sendMessageCreator, updateNewMessageTextCreator} from "../../Redux/dialo
 import Dialogs from "./Dialogs";
 import {connect} from "react-redux";
 import {WithAuthRedirect} from "../../hoc/WithAuthRedirect";
+import {compose} from "redux";
 
 /*const DialogsContainer = () => {
 
@@ -28,7 +29,7 @@ import {WithAuthRedirect} from "../../hoc/WithAuthRedirect";
     </StoreContext.Consumer>
 }*/
 
-let AuthRedirectComponent = WithAuthRedirect(Dialogs)
+
 
 let mapStateToProps = (state) => {
     return {
@@ -46,6 +47,16 @@ let mapDispatchToProps = (dispatch) => {
     }
 }
 
+export default compose(
+    connect(mapStateToProps, mapDispatchToProps),
+    WithAuthRedirect
+)(Dialogs)
+
+/*
+//Previous version:
+let AuthRedirectComponent = WithAuthRedirect(Dialogs)
+
 const DialogsContainer = connect(mapStateToProps, mapDispatchToProps)(AuthRedirectComponent)
 
 export default DialogsContainer
+*/

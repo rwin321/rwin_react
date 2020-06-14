@@ -7,3 +7,8 @@
 .profileDescp {
 
 }
+.profileStatus {
+  padding: 5px;
+  font-weight: normal;
+  color: darkgreen;
+}
