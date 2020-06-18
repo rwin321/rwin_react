@@ -12,7 +12,6 @@ let initialState = {
         {id: 3, message: 'Business Conference', likesCount: 12},
         {id: 4, message: 'Trip to my sweety', likesCount: 13}
     ],
-    newPostText: 'rwin_justwin',
     profile: null,
     status: ''
 }
@@ -23,13 +22,12 @@ const profileReducer = (state = initialState, action) => {
         case ADD_POST: {
             let newPost = {
                 id: 5,
-                message: state.newPostText,
+                message: action.postText,
                 likesCount: 0
             };
             let stateCopy = {...state};
             stateCopy.posts = [...state.posts];
             stateCopy.posts.push(newPost);
-            stateCopy.newPostText = '';
             return stateCopy;
         }
         case UPDATE_NEW_POST_TEXT: {
@@ -52,7 +50,7 @@ const profileReducer = (state = initialState, action) => {
 }
 
 
-export const addPostActionCreator = () => ({type: ADD_POST})
+export const addPost = (postText) => ({type: ADD_POST, postText})
 export const setUserProfile = (profile) => ({type: SET_USER_PROFILE, profile})
 export const setStatusProfile = (status) => ({type: SET_STATUS_PROFILE, status})
 
@@ -82,7 +80,6 @@ export const updateUserStatus = (status) => {
         });
     }
 }
-export const updateNewPostTextActionCreator = (text) => ({type: UPDATE_NEW_POST_TEXT, newText: text})
 
 
 export default profileReducer

@@ -28,6 +28,9 @@ export const usersAPI = {
 export const authAPI = {
     me() {
         return instance.get(`auth/me`)
+    },
+    login(userId) {
+        return instance.post(`auth/login/${userId}`)
     }
 
 }

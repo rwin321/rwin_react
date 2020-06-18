@@ -1,6 +1,6 @@
 import React from 'react'
 
-import {sendMessageCreator, updateNewMessageTextCreator} from "../../Redux/dialogs-reducer";
+import {sendMessage} from "../../Redux/dialogs-reducer";
 import Dialogs from "./Dialogs";
 import {connect} from "react-redux";
 import {WithAuthRedirect} from "../../hoc/WithAuthRedirect";
@@ -36,19 +36,18 @@ let mapStateToProps = (state) => {
         dialogsPage: state.dialogsPage
     }
 }
-let mapDispatchToProps = (dispatch) => {
+//Previous version:
+/*let mapDispatchToProps = (dispatch) => {
     return {
-        sendMessageCreator: () => {
-            dispatch(sendMessageCreator())
-        },
-        updateNewMessageText: (newText) => {
-            dispatch(updateNewMessageTextCreator(newText))
+        sendMessage: (newMessageBody) => {
+            dispatch(sendMessage(newMessageBody))
         }
     }
-}
+}*/
+//So now we don't use mapDispatchToProps, we use instead just name of our AC in connect func, which automatically making same
 
 export default compose(
-    connect(mapStateToProps, mapDispatchToProps),
+    connect(mapStateToProps, {sendMessage}),
     WithAuthRedirect
 )(Dialogs)
 
