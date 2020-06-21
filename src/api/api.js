@@ -24,7 +24,7 @@ export const usersAPI = {
     }
 
 }
-
+debugger
 export const authAPI = {
     me() {
         return instance.get(`auth/me`)
