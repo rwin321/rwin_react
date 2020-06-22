@@ -59,6 +59,7 @@ let mapStateToProps = (state) => {
         followingInProgress: state.usersPage.followingInProgress
     }
 }
+//Previous version (now it work same, but redux making this by itself)
 /*let mapDispatchToProps = (dispatch) => {
     return {
         follow: (userId) => {
@@ -86,8 +87,8 @@ let mapStateToProps = (state) => {
 
 export default compose(
     connect(mapStateToProps,
-        {follow, unFollow, setCurrentPage, toogleFollowingProgress, getUsers}),
-    WithAuthRedirect
+        {follow, unFollow, setCurrentPage, toogleFollowingProgress, getUsers})
+    //WithAuthRedirect
 )(UsersContainer)
 
 /*
