@@ -81,12 +81,12 @@ export const toogleFollowingProgress = (isFetching, userId) => ({
     userId
 })
 
-export const getUsers = (currentPage, pageSize) => {
+export const requestUsers = (page, pageSize) => {
     return (dispatch) => {
 
         dispatch(setPreloader(true));
-
-        usersAPI.getUsers(currentPage, pageSize).then(data => {
+        dispatch(setCurrentPage(page))
+        usersAPI.getUsers(page, pageSize).then(data => {
             dispatch(setPreloader(false));
             dispatch(setUsers(data.items));
             dispatch(setTotalUsersCount(data.totalCount));
