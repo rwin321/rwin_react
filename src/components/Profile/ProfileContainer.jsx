@@ -31,6 +31,7 @@ class ProfileContainer extends React.Component {
     }
 
     render() {
+        console.log('rerender Profiles')
         return (
             <Profile {...this.props}
                      profile={this.props.profile}
@@ -49,12 +50,15 @@ let mapStateToPropsForRedirect = (state) => ({
 
 AuthRedirectComponent = connect(mapStateToPropsForRedirect)(AuthRedirectComponent);
 */
-let mapStateToProps = (state) => ({
+let mapStateToProps = (state) => {
+    console.log('mSTP Profiles')
+    return {
     profile: state.profilePage.profile,
     status: state.profilePage.status,
     authorizedUserId: state.auth.userId,
     isAuth: state.auth.isAuth
-})
+}
+}
 
 
 export default compose(
