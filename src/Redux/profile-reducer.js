@@ -1,10 +1,10 @@
 import {profileAPI} from "../api/api";
 
-const ADD_POST = 'ADD-POST';
-const UPDATE_NEW_POST_TEXT = 'UPDATE-NEW-POST-TEXT';
-const SET_USER_PROFILE = 'SET_USER_PROFILE';
-const SET_STATUS_PROFILE = 'SET_STATUS_PROFILE';
-const DELETE_POST = 'DELETE_POST';
+const ADD_POST = 'profile/ADD-POST';
+const UPDATE_NEW_POST_TEXT = 'profile/UPDATE-NEW-POST-TEXT';
+const SET_USER_PROFILE = 'profile/SET_USER_PROFILE';
+const SET_STATUS_PROFILE = 'profile/SET_STATUS_PROFILE';
+const DELETE_POST = 'profile/DELETE_POST';
 
 let initialState = {
     posts: [
@@ -61,29 +61,24 @@ export const setStatusProfile = (status) => ({type: SET_STATUS_PROFILE, status})
 export const deletePost = (postId) => ({type: DELETE_POST, postId})
 
 export const getUserProfile = (userId) => {
-    return (dispatch) => {
-        profileAPI.getProfile(userId).then(response => {
-            dispatch(setUserProfile(response.data));
-        });
+    return async (dispatch) => {
+        let response = await profileAPI.getProfile(userId)
+        dispatch(setUserProfile(response.data));
     }
 }
 export const getUserStatus = (userId) => {
-    return (dispatch) => {
-        profileAPI.setStatus(userId)
-            .then(response => {
-            dispatch(setStatusProfile(response.data));
-        });
+    return async (dispatch) => {
+        let response = await profileAPI.setStatus(userId)
+                dispatch(setStatusProfile(response.data));
     }
 }
 export const updateUserStatus = (status) => {
-    return (dispatch) => {
-        profileAPI.updateStatus(status)
-            .then(response => {
-            // Needed condition to show the status by server:
-            if (response.data.resultCode === 0) {
-                dispatch(setStatusProfile(status));
-            }
-        });
+    return async (dispatch) => {
+        let response = await profileAPI.updateStatus(status)
+                // Needed condition to show the status by server:
+                if (response.data.resultCode === 0) {
+                    dispatch(setStatusProfile(status));
+                }
     }
 }
 

@@ -5,18 +5,15 @@ import './index.css'
 import App from "./App";
 import * as serviceWorker from './serviceWorker';
 import {Provider} from "react-redux";
+import {BrowserRouter} from "react-router-dom";
 
-setInterval(() => {
-    store.dispatch({type: 'FAKE'})
-}, 1000)
 
     ReactDOM.render(
-        <React.StrictMode>
+        <BrowserRouter>
             <Provider store={store}>
                 <App/>
             </Provider>
-        </React.StrictMode>,
-        document.getElementById('root')
+        </BrowserRouter>, document.getElementById('root')
     );
 
 

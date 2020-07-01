@@ -1,7 +1,7 @@
 import React from  'react'
 import {Field, reduxForm} from "redux-form";
 import {Input} from "../../common/FormsControls/FormsControls";
-import {required} from "../../validators/validators";
+import {required} from "../../utils/validators/validators";
 import {connect} from "react-redux";
 import {login} from "../../Redux/auths-reducer";
 import {Redirect} from "react-router-dom";

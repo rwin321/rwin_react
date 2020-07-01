@@ -2,7 +2,7 @@ import React from "react";
 import "./App.css";
 import Navbar from "./components/Navbar/Navbar";
 import Music from "./components/Music/Music";
-import {BrowserRouter, Route, withRouter} from 'react-router-dom'
+import {Route, withRouter} from 'react-router-dom'
 import News from "./components/News/News";
 import Settings from "./components/Settings/Settings";
 import DialogsContainer from "./components/Dialogs/DialogsContainer";
@@ -34,7 +34,6 @@ class App extends React.Component {
         }
 
         return (
-            <BrowserRouter>
                 <div className="app-wrapper">
                     <HeaderContainer/>
                     <Navbar/>
@@ -56,7 +55,6 @@ class App extends React.Component {
                         <Route path={'/settings'} render={() => <Settings/>}/>
                     </div>
                 </div>
-            </BrowserRouter>
         );
     }
 }
@@ -65,6 +63,7 @@ let mapStateToProps = (state) => ({
 })
 
 export default compose(
+    withRouter,
     connect(mapStateToProps, {initializeApp})
 )(App);
 
