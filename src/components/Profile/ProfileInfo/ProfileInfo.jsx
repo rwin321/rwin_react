@@ -10,7 +10,6 @@ const ProfileInfo = ({profile, ...props}) => {
     }
 
     return (
-
         <div>
             <div className={s.descriptionBlock}>
                 <img src={profile.photos.large || userPhoto}/>
