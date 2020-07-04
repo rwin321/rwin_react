@@ -1,20 +1,11 @@
 import React from 'react';
-import store from "./Redux/redux-store";
 import ReactDOM from "react-dom";
 import './index.css'
-import App from "./App";
 import * as serviceWorker from './serviceWorker';
-import {Provider} from "react-redux";
-import {BrowserRouter} from "react-router-dom";
+import ErvinJSApp from "./App";
 
 
-    ReactDOM.render(
-        <BrowserRouter>
-            <Provider store={store}>
-                <App/>
-            </Provider>
-        </BrowserRouter>, document.getElementById('root')
-    );
+    ReactDOM.render(<ErvinJSApp/>, document.getElementById('root'));
 
 
 // If you want your app to work offline and load faster, you can change

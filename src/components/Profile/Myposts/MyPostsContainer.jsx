@@ -34,8 +34,7 @@ import {connect} from "react-redux";
 
 const mapStateToProps = (state) => {
     return {
-        posts: state.profilePage.posts,
-        newPostText: state.profilePage.newPostText
+        posts: state.profilePage.posts
     }
 }
 //Previous version, no needn't to do. React making automatically

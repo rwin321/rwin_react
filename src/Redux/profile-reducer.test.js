@@ -11,7 +11,7 @@ let state = {
 }
 
 test('state.posts array must be incremented', () => {
-    // 1.state data
+    // 1.state dataз
     // 2. action
     let action = addPost('rwin_just_win')
     let newState = profileReducer(state, action)
