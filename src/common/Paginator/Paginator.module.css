@@ -1,3 +1,20 @@
-.selectedPage {
+.paginator {
+    margin: 10px
+}
+.pageNumber {
+    border: solid black 1px;
+    margin: 1px;
+}
+.selectedPage.pageNumber{
+    color: black;
+    padding: 3px 6px;
     font-weight: bold;
+    border: 1px solid black;
+}
+.btn {
+    color: blue;
+    margin: 4px;
+    font-style: italic;
+    border-radius: 10%;
+
 }
