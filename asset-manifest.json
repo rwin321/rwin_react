@@ -1,0 +1,31 @@
+{
+  "files": {
+    "main.css": "/rwin_react/static/css/main.768ade99.chunk.css",
+    "main.js": "/rwin_react/static/js/main.e6063f3a.chunk.js",
+    "main.js.map": "/rwin_react/static/js/main.e6063f3a.chunk.js.map",
+    "runtime-main.js": "/rwin_react/static/js/runtime-main.2d1dde79.js",
+    "runtime-main.js.map": "/rwin_react/static/js/runtime-main.2d1dde79.js.map",
+    "static/js/2.ab194506.chunk.js": "/rwin_react/static/js/2.ab194506.chunk.js",
+    "static/js/2.ab194506.chunk.js.map": "/rwin_react/static/js/2.ab194506.chunk.js.map",
+    "static/css/3.c2058dfa.chunk.css": "/rwin_react/static/css/3.c2058dfa.chunk.css",
+    "static/js/3.c3717ba4.chunk.js": "/rwin_react/static/js/3.c3717ba4.chunk.js",
+    "static/js/3.c3717ba4.chunk.js.map": "/rwin_react/static/js/3.c3717ba4.chunk.js.map",
+    "static/css/4.3b2f0407.chunk.css": "/rwin_react/static/css/4.3b2f0407.chunk.css",
+    "static/js/4.f0b66727.chunk.js": "/rwin_react/static/js/4.f0b66727.chunk.js",
+    "static/js/4.f0b66727.chunk.js.map": "/rwin_react/static/js/4.f0b66727.chunk.js.map",
+    "index.html": "/rwin_react/index.html",
+    "precache-manifest.373e6843890b83f2321d81c4452d143a.js": "/rwin_react/precache-manifest.373e6843890b83f2321d81c4452d143a.js",
+    "service-worker.js": "/rwin_react/service-worker.js",
+    "static/css/3.c2058dfa.chunk.css.map": "/rwin_react/static/css/3.c2058dfa.chunk.css.map",
+    "static/css/4.3b2f0407.chunk.css.map": "/rwin_react/static/css/4.3b2f0407.chunk.css.map",
+    "static/css/main.768ade99.chunk.css.map": "/rwin_react/static/css/main.768ade99.chunk.css.map",
+    "static/js/2.ab194506.chunk.js.LICENSE.txt": "/rwin_react/static/js/2.ab194506.chunk.js.LICENSE.txt",
+    "static/media/preloader.svg": "/rwin_react/static/media/preloader.1cb669e9.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.2d1dde79.js",
+    "static/js/2.ab194506.chunk.js",
+    "static/css/main.768ade99.chunk.css",
+    "static/js/main.e6063f3a.chunk.js"
+  ]
+}
