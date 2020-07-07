@@ -35,7 +35,7 @@ const Navbar = () => {
                 <div className={s.sideBarFriendName}>
                 <span className={s.tabName}>Akim</span>
                 <span className={s.tabName}>Ennan</span>
-                <span className={s.tabName}>Jimbo</span>
+                <span className={s.tabName}>Emirali</span>
                 </div>
             </div>
         </nav>
