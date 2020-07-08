@@ -83,7 +83,7 @@ let AppContainer = compose(
 )(App);
 
 const ErvinJSApp = (props) => {
-    return <HashRouter basename={process.env.PUBLIC_URL}>
+    return <HashRouter>
         <Provider store={store}>
             <AppContainer/>
         </Provider>
