@@ -1,8 +1,16 @@
-.descriptionBlock {
-  padding: 10px;
+.profileInfoBlock {
+  padding: 5px 5px 10px 5px;
 }
-.profileImg {
-  width: 800px;
+.mainPhoto {
+  width: 250px;
+}
+.contact {
+  padding-left: 10px;
+}
+.profileDescp {
+  font-family: Georgia;
+  font-size: 15px;
+  padding: 5px;
 }
 /*.inputFile {
   width: 115px;
@@ -19,12 +27,11 @@
 .inputFile::before {
   box-sizing: border-box;
   content: 'new photo';
-  width: 100px;
-  margin: 10px;
+  margin: 5px;
   background: -webkit-linear-gradient(top, #f9f9f9, #e3e3e3);
   border: 1px solid #999;
   border-radius: 3px;
-  padding: 5px 8px;
+  padding: 2px 5px;
   cursor: pointer;
   text-shadow: 1px 1px #fff;
   font-weight: 700;
@@ -33,10 +40,6 @@
 
 }
 .profileStatus {
-  padding: 5px;
   font-weight: normal;
-  color: darkgreen;
-}
-.mainPhoto {
-  max-width: 200px;
+  color: black;
 }
