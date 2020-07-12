@@ -68,28 +68,35 @@ export const deletePost = (postId) => ({type: DELETE_POST, postId})
 
 export const getUserProfile = (userId) => {
     return async (dispatch) => {
-        let response = await profileAPI.getProfile(userId)
+        const response = await profileAPI.getProfile(userId)
         dispatch(setUserProfile(response.data));
     }
 }
 export const getUserStatus = (userId) => {
     return async (dispatch) => {
-        let response = await profileAPI.setStatus(userId)
+        const response = await profileAPI.setStatus(userId)
                 dispatch(setStatusProfile(response.data));
     }
 }
 export const savePhoto = (file) => {
-    debugger
     return async (dispatch) => {
-        let response = await profileAPI.saveProfilePhoto(file)
+        const response = await profileAPI.saveProfilePhoto(file)
         if (response.data.resultCode === 0) {
             dispatch(setProfilePhoto(response.data.data.photos));
         }
     }
 }
+export const saveProfile = (profile) =>  async (dispatch, getState) => {
+        const response = await profileAPI.saveProfileInfo(profile)
+        const userId = getState().auth.userId
+        if (response.data.resultCode === 0) {
+            dispatch(getUserProfile(userId))
+        }
+    }
+
 export const updateUserStatus = (status) => {
     return async (dispatch) => {
-        let response = await profileAPI.updateStatus(status)
+        const response = await profileAPI.updateStatus(status)
                 // Needed condition to show the status by server:
                 if (response.data.resultCode === 0) {
                     dispatch(setStatusProfile(status));
