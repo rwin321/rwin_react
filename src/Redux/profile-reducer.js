@@ -1,4 +1,5 @@
 import {profileAPI} from "../api/api";
+import {stopSubmit} from "redux-form";
 
 const ADD_POST = 'profile/ADD-POST';
 const UPDATE_NEW_POST_TEXT = 'profile/UPDATE-NEW-POST-TEXT';
@@ -91,8 +92,12 @@ export const saveProfile = (profile) =>  async (dispatch, getState) => {
         const userId = getState().auth.userId
         if (response.data.resultCode === 0) {
             dispatch(getUserProfile(userId))
+        } else {
+            // dispatch(stopSubmit('edit-profileData', {'contacts': {'facebook': response.data.messages[0] }}))
+            dispatch(stopSubmit('edit-profileData', {_error: response.data.messages[0] }))
+            return Promise.reject({_error: response.data.messages[0] })
         }
-    }
+}
 
 export const updateUserStatus = (status) => {
     return async (dispatch) => {
