@@ -1,9 +1,9 @@
 import React from  'react'
 import {Field, reduxForm} from "redux-form";
-import {Input} from "../../common/FormsControls/FormsControls";
+import {createField, Input} from "../../common/FormsControls/FormsControls";
 import {required} from "../../utils/validators/validators";
 import {connect} from "react-redux";
-import {login} from "../../Redux/auths-reducer";
+import {getCaptchaUrl, login} from "../../Redux/auths-reducer";
 import {Redirect} from "react-router-dom";
 import styles from './../../common/FormsControls/FormsControls.module.css'
 
@@ -19,6 +19,10 @@ const LoginForm = (props) => {
             <div>
                 <Field component={Input} name={'rememberMe'} type={'checkbox'}/> remember me
             </div>
+            { props.captchaUrl && <img src={props.captchaUrl} /> }
+
+            { props.captchaUrl && createField('write secrete code to comfirm that ou are a human', 'captcha', [required], Input) }
+
             {
                 props.error && <div className={styles.formSummaryError}>
                 {props.error}
@@ -39,7 +43,7 @@ const LoginReduxForm = reduxForm({
 
 const Login = (props) => {
     const onSubmit = (formData) => {
-        props.login(formData.email, formData.password, formData.rememberMe)
+        props.login(formData.email, formData.password, formData.rememberMe, formData.captcha)
     }
 
     if (props.isAuth) {
@@ -48,11 +52,12 @@ const Login = (props) => {
 
     return <div>
         <h1>Log In</h1>
-        <LoginReduxForm onSubmit={onSubmit}/>
+        <LoginReduxForm captchaUrl={props.captchaUrl} onSubmit={onSubmit}/>
     </div>
 }
 
 const mapStateToProps = (state) => ({
+    captchaUrl: state.auth.captchaUrl,
     isAuth: state.auth.isAuth
 })
 
