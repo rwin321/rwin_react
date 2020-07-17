@@ -1,5 +1,6 @@
 import {profileAPI} from "../api/api";
 import {stopSubmit} from "redux-form";
+import {logout} from "./auths-reducer";
 
 const ADD_POST = 'profile/ADD-POST';
 const UPDATE_NEW_POST_TEXT = 'profile/UPDATE-NEW-POST-TEXT';
@@ -99,15 +100,19 @@ export const saveProfile = (profile) =>  async (dispatch, getState) => {
         }
 }
 
-export const updateUserStatus = (status) => {
-    return async (dispatch) => {
-        const response = await profileAPI.updateStatus(status)
+export const updateUserStatus = (status) => async (dispatch) => {
+        try { const response = await profileAPI.updateStatus(status)
                 // Needed condition to show the status by server:
                 if (response.data.resultCode === 0) {
                     dispatch(setStatusProfile(status));
                 }
-    }
+
+        } catch(error) {
+            //Some action that we must to implement for some errors
+            alert('Update Status Error')
+        }
 }
+
 
 
 export default profileReducer

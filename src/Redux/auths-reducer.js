@@ -1,10 +1,8 @@
 import {authAPI, securityAPI} from "../api/api";
 import {stopSubmit} from "redux-form";
 
-
 const SET_USER_DATA = 'auth/SET_USER_DATA';
 const GET_CAPTCHA_URL = 'auth/GET_CAPTCHA_URL';
-
 
 let initialState = {
     email: null,
@@ -27,7 +25,6 @@ const authsReducer = (state = initialState, action) => {
             return state;
     }
 }
-
 
 export const setAuthUserData = (email, login, userId, isAuth) => ({ type: SET_USER_DATA, payload: {email, login, userId, isAuth }})
 export const getAuthCaptchaUrlSuccess = (captchaUrl) => ({ type: GET_CAPTCHA_URL, payload: {captchaUrl} })

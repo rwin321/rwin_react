@@ -2,6 +2,8 @@
     margin: 0 auto;
     display: grid;
     width: auto;
+    max-width: 1960px;
+    max-height: 1080px;
     grid-template-areas: "h h" "n c";
     grid-template-rows: 60px 1fr;
     grid-template-columns: 2fr 10fr;
