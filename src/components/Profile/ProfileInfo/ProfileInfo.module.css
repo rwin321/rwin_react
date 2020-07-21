@@ -43,3 +43,14 @@
   font-weight: normal;
   color: black;
 }
+.profileDataEditBtn {
+  background-color: #555;
+  color: white;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+}
+.profileDataEditBtn:hover {
+  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 14px 40px 0 rgba(0,0,0,0.19);
+}

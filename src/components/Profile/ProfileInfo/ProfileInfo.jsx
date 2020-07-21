@@ -45,9 +45,7 @@ const ProfileInfo = ({profile, ...props}) => {
 
 const ProfileData = ({profile, isOwner, goToEditMode}) => {
     return <div className={s.profileDescp}>
-        <div>
-            { isOwner && <button onClick={goToEditMode}> edit </button> }
-        </div>
+
         <div> <b>Full Name</b>:  {profile.fullName}</div>
         <div>
             <b>About me:</b>  {profile.aboutMe}
@@ -59,6 +57,9 @@ const ProfileData = ({profile, isOwner, goToEditMode}) => {
         <div>
             <b>Contacts</b>: {Object.keys(profile.contacts).map(key => {
             return <Contact key={key} contactTitle={key} contactValue={profile.contacts[key]} /> })}
+        </div>
+        <div>
+            { isOwner && <button className={s.profileDataEditBtn} onClick={goToEditMode}> edit </button> }
         </div>
     </div>
 

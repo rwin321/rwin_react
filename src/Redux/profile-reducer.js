@@ -1,6 +1,5 @@
 import {profileAPI} from "../api/api";
 import {stopSubmit} from "redux-form";
-import {logout} from "./auths-reducer";
 
 const ADD_POST = 'profile/ADD-POST';
 const UPDATE_NEW_POST_TEXT = 'profile/UPDATE-NEW-POST-TEXT';
@@ -34,6 +33,12 @@ const profileReducer = (state = initialState, action) => {
             stateCopy.posts.push(newPost);
             return stateCopy;
         }
+        case DELETE_POST: {
+            let stateCopy = {...state};
+            stateCopy.posts = [...state.posts];
+            stateCopy.posts = stateCopy.posts.filter(post => post.id !== action.postId)
+            return stateCopy;
+        }
         case UPDATE_NEW_POST_TEXT: {
             let stateCopy = {...state};
             stateCopy.newPostText = action.newText;
@@ -49,10 +54,6 @@ const profileReducer = (state = initialState, action) => {
         }
         case SET_PROFILE_PHOTO: {
             return {...state, profile: {...state.profile, photos: action.photos} };
-
-        }
-        case DELETE_POST: {
-            return {...state, posts: state.posts.filter(p => p.id !== action.postId)};
 
         }
         default:

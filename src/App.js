@@ -16,6 +16,7 @@ import store from "./Redux/redux-store";
 import {WithSuspense} from "./hoc/WithSuspense";
 
 //import DialogsContainer from "./components/Dialogs/DialogsContainer";
+//Makes app's 1st download faster. When user will tap on these routes, so then app will load them
 const DialogsContainer = React.lazy(() => import('./components/Dialogs/DialogsContainer'));
 //import ProfileContainer from "./components/Profile/ProfileContainer";
 const ProfileContainer = React.lazy(() => import('./components/Profile/ProfileContainer'));
@@ -27,6 +28,7 @@ class App extends React.Component {
         /*if (this.props.showGlobalError(promise)) {
             this.props.history.push('/login')
         }*/
+        //Need to be fixed, alert -> into error window
         alert('Some Error')
     }
 
@@ -110,6 +112,13 @@ const ErvinJSApp = (props) => {
         </Provider>
     </BrowserRouter>
 }
+/*const ErvinJSApp = (props) => {
+    return <HashRouter>
+        <Provider store={store}>
+            <AppContainer/>
+        </Provider>
+    </HashRouter>
+}*/
 
 export default ErvinJSApp
 

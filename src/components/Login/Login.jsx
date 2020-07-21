@@ -3,9 +3,10 @@ import {Field, reduxForm} from "redux-form";
 import {createField, Input} from "../../common/FormsControls/FormsControls";
 import {required} from "../../utils/validators/validators";
 import {connect} from "react-redux";
-import {getCaptchaUrl, login} from "../../Redux/auths-reducer";
+import {login} from "../../Redux/auths-reducer";
 import {Redirect} from "react-router-dom";
 import styles from './../../common/FormsControls/FormsControls.module.css'
+import s from './Login.module.css'
 
 const LoginForm = (props) => {
     return (
@@ -16,21 +17,22 @@ const LoginForm = (props) => {
             <div>
                 <Field placeholder={'password'}validate={[required]} name={'password'} component={Input} type={'password'}/>
             </div>
-            <div>
+            <div className={s.inline}>
                 <Field component={Input} name={'rememberMe'} type={'checkbox'}/> remember me
             </div>
+            <div className={s.inline}>
+                <button className={s.loginBtn}>Login</button>
+            </div>
+
             { props.captchaUrl && <img src={props.captchaUrl} /> }
 
-            { props.captchaUrl && createField('write secrete code to comfirm that ou are a human', 'captcha', [required], Input) }
+            { props.captchaUrl && createField('write secrete code to confirm that ou are a human', 'captcha', [required], Input) }
 
             {
                 props.error && <div className={styles.formSummaryError}>
                 {props.error}
             </div>
             }
-            <div>
-                <button>Login</button>
-            </div>
         </form>
     )
 }
@@ -50,7 +52,7 @@ const Login = (props) => {
         return <Redirect to={'/profile'}/>
     }
 
-    return <div>
+    return <div className={s.login}>
         <h1>Log In</h1>
         <LoginReduxForm captchaUrl={props.captchaUrl} onSubmit={onSubmit}/>
     </div>

@@ -1,6 +1,7 @@
 import React from "react";
 import s from "./Navbar.module.css";
 import {NavLink} from "react-router-dom";
+import userPhoto from '../../assets/imgs/user.png'
 
 const Navbar = () => {
     return (
@@ -28,14 +29,14 @@ const Navbar = () => {
             </div>
             <div className={s.sideBarFriendContent}>
                 <div className={s.sideBarFriendLogo}>
-                <img className={s.imgFriend} src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTS1ceqUK9woAU-xU8vl1FcrTH2_DrshJDeKxb24Fg_nAW0FExr&usqp=CAU" />
-                <img className={s.imgFriend} src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTS1ceqUK9woAU-xU8vl1FcrTH2_DrshJDeKxb24Fg_nAW0FExr&usqp=CAU" />
-                <img className={s.imgFriend} src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTS1ceqUK9woAU-xU8vl1FcrTH2_DrshJDeKxb24Fg_nAW0FExr&usqp=CAU" />
+                    <img className={s.imgFriend} src={userPhoto}/>
+                    <img className={s.imgFriend} src={userPhoto}/>
+                    <img className={s.imgFriend} src={userPhoto}/>
                 </div>
                 <div className={s.sideBarFriendName}>
-                <span className={s.tabName}>Akim</span>
-                <span className={s.tabName}>Ennan</span>
-                <span className={s.tabName}>Emirali</span>
+                    <span className={s.tabName}>Akim</span>
+                    <span className={s.tabName}>Ennan</span>
+                    <span className={s.tabName}>Emirali</span>
                 </div>
             </div>
         </nav>
