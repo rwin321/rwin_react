@@ -7,7 +7,6 @@ const Message = (props) => {
     return (
         <div className={s.messagesContent}>
             <div className={s.message}>{props.message}</div>
-            <div></div>
         </div>
 )
 }

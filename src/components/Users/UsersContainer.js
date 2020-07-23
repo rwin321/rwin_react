@@ -7,7 +7,6 @@ import {
     unFollow
 } from "../../Redux/users-reducer";
 import Preloader from "../../common/Preloader/Preloader";
-import {WithAuthRedirect} from "../../hoc/WithAuthRedirect";
 import {compose} from "redux";
 import {
     getCurrentPage,

@@ -1,4 +1,23 @@
+.user {
+    margin: 0 0 0 30px;
+}
 .userPhoto {
     width: 100px;
     border-radius: 50%;
+}
+.followUnfollowBtn {
+
+}
+.followUnfollowBtn {
+    background-color: #555;
+    color: white;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    margin-left: 25px;
+}
+.followUnfollowBtn:hover {
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 14px 40px 0 rgba(0,0,0,0.19);
 }

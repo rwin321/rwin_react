@@ -1,7 +1,7 @@
 .dialogs {
     display: grid;
     grid-template-columns: 2fr 10fr;
-
+    font-family: Georgia;
 }
 .dialogsItems {
     padding: 10px;
@@ -16,8 +16,12 @@
     padding: 10px 10px 0 0;
 
 }
+.messagesContent {
+    padding: 5px;
+}
 .messages {
-    padding: 10px;
+    padding: 15px;
+
 }
 .sendMessageBtn {
     background-color: #555;

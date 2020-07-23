@@ -12,9 +12,7 @@
     border: 1px solid black;
 }
 .btn {
-    color: blue;
-    margin: 4px;
-    font-style: italic;
-    border-radius: 10%;
-
+    composes: deleteBtn from '../../components/Profile/Myposts/Post/Post.module.css';
+    padding: 5px;
+    margin: 15px;
 }

@@ -1,6 +1,6 @@
 .header {
   grid-area: h;
-  background-color: rgba(61, 40, 193, 0.92);
+  background-color: rgba(99, 69, 203, 0.92);
   border-style: double;
   border-width: 2mm;
 }
@@ -22,14 +22,8 @@
   padding-right: 10px;
 }
 .logoutBtn {
-  background-color: #87b0d9;
-  color: #444242;
-  font-size: 16px;
-  border: none;
-  cursor: pointer;
-  border-radius: 5px;
-  margin-bottom: 20px;
-  font-family: Georgia;
+  composes: deleteBtn from '../../components/Profile/Myposts/Post/Post.module.css';
+  background-color: #7d90a7;
 }
 .logoutBtn:hover {
   box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 14px 40px 0 rgba(0,0,0,0.19);
