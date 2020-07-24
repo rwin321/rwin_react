@@ -11,9 +11,9 @@ const DELETE_POST = 'profile/DELETE_POST';
 let initialState = {
     posts: [
         {id: 1, message: 'Hi, my name is Ervin', likesCount: 20},
-        {id: 2, message: 'It\'s is my 1st post!', likesCount: 11},
-        {id: 3, message: 'Business Conference', likesCount: 12},
-        {id: 4, message: 'Trip to my sweety', likesCount: 13}
+        {id: 2, message: 'I\'m working for my new project', likesCount: 11},
+        {id: 3, message: 'Don\'t hurry up, it\' just slows you', likesCount: 12},
+        {id: 4, message: 'To get succeed, first you must learn how to fail', likesCount: 13}
     ],
     profile: null,
     status: ''

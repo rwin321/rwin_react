@@ -25,18 +25,32 @@ const Navbar = () => {
                 <NavLink to='/settings' activeClassName={s.active}>Settings</NavLink>
             </div>
             <div className={s.sideBarFriendTitle}>
-                <div className={s.sideBarFriendTitleName}>FRIENDS</div>
+                <div className={s.sideBarFriendTitleName}>
+                    <span>FRIENDS</span>
+                </div>
             </div>
             <div className={s.sideBarFriendContent}>
                 <div className={s.sideBarFriendLogo}>
-                    <img className={s.imgFriend} src={userPhoto}/>
-                    <img className={s.imgFriend} src={userPhoto}/>
-                    <img className={s.imgFriend} src={userPhoto}/>
+                    <NavLink to={'/dialogs/1'}>
+                        <img className={s.imgFriend} src={userPhoto}/>
+                    </NavLink>
+                    <NavLink to={'/dialogs/2'}>
+                        <img className={s.imgFriend} src={userPhoto}/>
+                    </NavLink>
+                    <NavLink to={'/dialogs/3'}>
+                        <img className={s.imgFriend} src={userPhoto}/>
+                    </NavLink>
                 </div>
                 <div className={s.sideBarFriendName}>
-                    <span className={s.tabName}>Akim</span>
-                    <span className={s.tabName}>Ennan</span>
-                    <span className={s.tabName}>Emirali</span>
+                    <NavLink to={'/dialogs/1'}>
+                        <span>Akim</span>
+                    </NavLink>
+                    <NavLink to={'/dialogs/2'}>
+                        <span>Ennan</span>
+                    </NavLink>
+                    <NavLink to={'/dialogs/3'}>
+                        <span>Emirali</span>
+                    </NavLink>
                 </div>
             </div>
         </nav>

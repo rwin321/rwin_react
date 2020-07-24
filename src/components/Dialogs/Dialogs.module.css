@@ -1,14 +1,21 @@
 .dialogs {
     display: grid;
-    grid-template-columns: 2fr 10fr;
+    grid-template-columns: 3fr 3fr 6fr;
     font-family: Georgia;
 }
 .dialogsItems {
     padding: 10px;
 }
-
-.dialog.active {
-    color: white;
+.dialog img {
+    width: 50px;
+    border-radius: 50%;
+}
+.dialog span{
+    display: inline-block;
+    text-underline: none;
+    padding: 0 0 15px 20px;
+    margin-bottom: 10px;
+    height: 20px;
 }
 .logoImg {
     width: 30px;

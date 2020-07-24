@@ -32,7 +32,7 @@ const Dialogs = (props) => {
     return (
         <div className={s.dialogs}>
             <div className={s.dialogsItems}>
-                {dialogsElements}
+                <span>{dialogsElements}</span>
             </div>
             <div className={s.messages}>
                 {messagesElements}

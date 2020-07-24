@@ -78,6 +78,16 @@ class App extends React.Component {
                                        <ProfileContainer/>
                                    </React.Suspense>}*/
                                }/>
+{/*
+                               <Route path={'/dialogs/1'} render={}/>
+
+                               <Route path={'/dialogs/2'} render={}/>
+
+
+                               <Route path={'/dialogs/3'} redenr={}/>
+*/}
+
+
                         <Route path={'/users'}
                                render={() =>
                                    <UsersContainer/>}/>

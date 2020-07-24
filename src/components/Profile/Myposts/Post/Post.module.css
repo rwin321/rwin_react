@@ -4,9 +4,11 @@
   padding: 0 0 10px 10px;
 }
 .item img {
-  width: 8%;
+  width: 80px;
   border-radius: 50%;
-  padding: 5px 10px 0 0;
+}
+.likesCont {
+  display: block;
 }
 .likes {
   padding: 0 0 0 65px;
