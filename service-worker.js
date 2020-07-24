@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/rwin_react/precache-manifest.bb43b5872f8ec7ac3c586ca80c37c096.js"
+  "/rwin_react/precache-manifest.c06018651c652ae1fa33850715670d27.js"
 );
 
 self.addEventListener('message', (event) => {
