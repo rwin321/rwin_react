@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "337b250e735ed4a8948ffa57eed4d433",
+    "revision": "8a8a0bbf8c76670ce4c7d92703db5cde",
     "url": "/rwin_react/index.html"
   },
   {
@@ -8,8 +8,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/rwin_react/static/css/3.521d8a4d.chunk.css"
   },
   {
-    "revision": "c926b37690a568602037",
-    "url": "/rwin_react/static/css/4.5e19274c.chunk.css"
+    "revision": "f49b03a5ddcb5e22baa8",
+    "url": "/rwin_react/static/css/4.ba317107.chunk.css"
   },
   {
     "revision": "99b09db5e3c088b1700b",
@@ -28,7 +28,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/rwin_react/static/js/3.63f5632c.chunk.js"
   },
   {
-    "revision": "c926b37690a568602037",
+    "revision": "f49b03a5ddcb5e22baa8",
     "url": "/rwin_react/static/js/4.6535ea6d.chunk.js"
   },
   {
@@ -36,8 +36,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/rwin_react/static/js/main.17dadaf7.chunk.js"
   },
   {
-    "revision": "9fea8e3cecbf45b03a68",
-    "url": "/rwin_react/static/js/runtime-main.b1422153.js"
+    "revision": "f894d0860f9226ad5014",
+    "url": "/rwin_react/static/js/runtime-main.fcc250da.js"
   },
   {
     "revision": "22e0e6fac64c876a68e450a193af965a",
