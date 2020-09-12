@@ -1,9 +1,37 @@
 .nav {
   grid-area: n;
   background-color: rgba(107, 73, 229, 0.51);
-  padding: 15px;
+  padding: 1%;
+  margin: 5px 5px 5px 10px;
   font-family: Georgia;
+  border: 1px solid black;
+  border-radius: 15px;
+  text-align: center;
+  font-size: 25px;
 }
+
+@media (max-width: 1960px) {
+  .profileInfoBlock {
+    max-width: 1280px;
+  }
+  @media (max-width: 1280px) {
+    .profileInfoBlock {
+      max-width: 992px;
+    }
+  }
+  @media (max-width: 992px) {
+    .profileInfoBlock {
+      max-width: 750px;
+    }
+  }
+}
+@media (max-width: 767px) {
+  .profileInfoBlock {
+    max-width: none;
+  }
+}
+
+
 .item a {
   font-family: Georgia;
   text-decoration-line: unset;
@@ -13,21 +41,19 @@
 }
 .item a.active {
   color: rgb(54, 10, 36);
+  text-shadow: none;
 }
-.sideBarFriendTitle {
-  padding: 50px 0 0 40px;
+.item:hover {
+  text-shadow: 2px 2px 3px black;
 }
-.sideBarFriendContent{
-  padding: 5px 0 0 0;
+.sideBarTitle {
+  padding-top: 5%;
 }
-.imgFriend{
-  width: 30px;
-  border-radius: 50%;
-  padding: 10px;
+.sideBarItems {
+
 }
-.sideBarFriendName span {
-  display: inline-block;
-  padding-left: 7px;
-  letter-spacing: 1px;
-  font-size: 15px;
+.sideBarItem {
+  width: 50px;
+  padding: 2px;
 }
+

@@ -1,10 +1,11 @@
 import React from "react";
 import styles from './FormsControls.module.css'
-import {Field} from "redux-form";
+import { Field } from "redux-form";
+import TextField from "@material-ui/core/TextField";
 
 const FormControl = ({input, meta: {touched, error}, children}) => {
 
-    let hasError = touched && error
+    const hasError = touched && error
 
     return (
         <div className={ touched && error && styles.formControl + ' ' + (hasError ? styles.error : '') }>
@@ -20,7 +21,7 @@ const FormControl = ({input, meta: {touched, error}, children}) => {
 
 export const Textarea = (props) => {
     const {input, meta, child, ...restProps} = props;
-    return <FormControl {...props}> <textarea {...input} {...restProps} /> </FormControl>
+    return <FormControl {...props}> <TextField {...input} {...restProps} /> </FormControl>
 }
 export const Input = (props) => {
     const {input, meta, child, ...restProps} = props;

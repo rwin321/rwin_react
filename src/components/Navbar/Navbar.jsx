@@ -1,6 +1,6 @@
-import React from "react";
-import s from "./Navbar.module.css";
-import {NavLink} from "react-router-dom";
+import React from "react"
+import s from "./Navbar.module.css"
+import { NavLink } from "react-router-dom"
 import userPhoto from '../../assets/imgs/user.png'
 
 const Navbar = () => {
@@ -24,37 +24,22 @@ const Navbar = () => {
             <div className={s.item}>
                 <NavLink to='/settings' activeClassName={s.active}>Settings</NavLink>
             </div>
-            <div className={s.sideBarFriendTitle}>
-                <div className={s.sideBarFriendTitleName}>
-                    <span>FRIENDS</span>
-                </div>
-            </div>
             <div className={s.sideBarFriendContent}>
-                <div className={s.sideBarFriendLogo}>
-                    <NavLink to={'/dialogs/1'}>
-                        <img className={s.imgFriend} src={userPhoto}/>
+                <div className={s.sideBarTitle}>FRIENDS</div>
+                <div className={s.sideBarItems}>
+                    <NavLink to={'/dialogs'}>
+                        <img className={s.sideBarItem} src={userPhoto}/>
                     </NavLink>
-                    <NavLink to={'/dialogs/2'}>
-                        <img className={s.imgFriend} src={userPhoto}/>
+                    <NavLink to={'/dialogs'}>
+                        <img className={s.sideBarItem} src={userPhoto}/>
                     </NavLink>
-                    <NavLink to={'/dialogs/3'}>
-                        <img className={s.imgFriend} src={userPhoto}/>
-                    </NavLink>
-                </div>
-                <div className={s.sideBarFriendName}>
-                    <NavLink to={'/dialogs/1'}>
-                        <span>Akim</span>
-                    </NavLink>
-                    <NavLink to={'/dialogs/2'}>
-                        <span>Ennan</span>
-                    </NavLink>
-                    <NavLink to={'/dialogs/3'}>
-                        <span>Emirali</span>
+                    <NavLink to={'/dialogs'}>
+                        <img className={s.sideBarItem} src={userPhoto}/>
                     </NavLink>
                 </div>
             </div>
         </nav>
-    );
-};
+    )
+}
 
-export default Navbar;
+export default Navbar

@@ -1,9 +1,0 @@
-.profileStatus {
-    width: 250px; /* Ширина блока */
-    padding: 5px; /* Поля */
-    margin-top: 5px; /* Отступ сверху */
-    box-sizing: content-box;
-    -moz-box-sizing: border-box; /* Для Firefox */
-    font-size: 13px;
-    border: none;
-}

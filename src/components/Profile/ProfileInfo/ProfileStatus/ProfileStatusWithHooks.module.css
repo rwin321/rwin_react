@@ -1,0 +1,23 @@
+.profileStatus {
+    display: inline-block;
+    width: 250px;
+    max-width: 250px;
+    padding: 5px;
+    margin-top: 5px;
+    box-sizing: content-box;
+    -moz-box-sizing: border-box;
+    font-size: 15px;
+    font-family: Georgia;
+    font-style: italic;
+}
+.span {
+    padding-bottom: 5px;
+}
+.span:hover {
+    color: #67cbe2;
+}
+.input {
+    display: inline-block;
+    max-width: 300px;
+}
+

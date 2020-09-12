@@ -2,6 +2,7 @@
   color: white;
   font-size: medium;
   padding: 0 0 10px 10px;
+  position: static;
 }
 .item img {
   width: 80px;
@@ -22,7 +23,20 @@
   cursor: pointer;
   border-radius: 5px;
   margin-bottom: 20px;
+  display: inline-block;
 }
-.deleteBtn:hover {
-  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 14px 40px 0 rgba(0,0,0,0.19);
+.likeBtn {
+  background-color: #555;
+  color: white;
+  font-size: 16px;
+  font-family: Georgia;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  margin-bottom: 20px;
+  margin-right: 10px;
+  display: inline-block;
+}
+.deleteBtn {
+  margin: -1px 0 0 0;
 }

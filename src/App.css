@@ -1,16 +1,38 @@
 .app-wrapper {
-    margin: 0 auto;
+    margin: 0px auto;
     display: grid;
     width: auto;
     max-width: 1960px;
-    max-height: 1080px;
+    min-width: 100%;
+    min-height: 100%;
     grid-template-areas: "h h" "n c";
     grid-template-rows: 60px 1fr;
     grid-template-columns: 2fr 10fr;
-    /*grid-gap: 5px;*/
+    background-color: rgba(40, 11, 170, 0.507);
 }
 
 .app-wrapper-content {
     grid-area: c;
-    background-color: rgba(40, 11, 170, 0.507);
+    max-width: 100%;
+}
+
+@media (max-width: 1960px) {
+    .app-wrapper {
+        max-width: 1280px;
+    }
+}
+@media (max-width: 1280px) {
+    .app-wrapper {
+        max-width: 992px;
+    }
+}
+@media (max-width: 992px) {
+    .app-wrapper {
+        max-width: 750px;
+    }
+}
+@media (max-width: 767px) {
+    .app-wrapper {
+        max-width: none;
+    }
 }

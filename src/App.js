@@ -2,25 +2,24 @@ import React from "react";
 import "./App.css";
 import Navbar from "./components/Navbar/Navbar";
 import Music from "./components/Music/Music";
-import {BrowserRouter, Redirect, Route, Switch, withRouter} from 'react-router-dom'
-import News from "./components/News/News";
+import { BrowserRouter, Redirect, Route, Switch, withRouter } from 'react-router-dom'
 import Settings from "./components/Settings/Settings";
 import UsersContainer from "./components/Users/UsersContainer";
 import HeaderContainer from "./components/Header/HeaderContainer";
 import Login from "./components/Login/Login";
-import {connect, Provider} from "react-redux";
-import {compose} from "redux";
-import {initializeApp, showGlobalError} from "./Redux/app-reducer";
+import { connect, Provider } from "react-redux";
+import { compose } from "redux";
+import { initializeApp, showGlobalError } from "./Redux/app-reducer";
 import Preloader from "./common/Preloader/Preloader";
 import store from "./Redux/redux-store";
-import {WithSuspense} from "./hoc/WithSuspense";
+import { WithSuspense } from "./hoc/WithSuspense";
+import NewsContainer from "./components/News/NewsContainer";
 
 //import DialogsContainer from "./components/Dialogs/DialogsContainer";
 //Makes app's 1st download faster. When user will tap on these routes, so then app will load them
-const DialogsContainer = React.lazy(() => import('./components/Dialogs/DialogsContainer'));
+const DialogsContainer = React.lazy(() => import('./components/Dialogs/DialogsContainer') );
 //import ProfileContainer from "./components/Profile/ProfileContainer";
-const ProfileContainer = React.lazy(() => import('./components/Profile/ProfileContainer'));
-
+const ProfileContainer = React.lazy(() => import('./components/Profile/ProfileContainer') );
 
 class App extends React.Component {
 
@@ -29,7 +28,7 @@ class App extends React.Component {
             this.props.history.push('/login')
         }*/
         //Need to be fixed, alert -> into error window
-        alert('Some Error')
+        console.log('Some Error')
     }
 
     componentDidMount() {
@@ -45,7 +44,6 @@ class App extends React.Component {
     }
     componentWillUnmount() {
         window.removeEventListener("unhandledrejection", this.catchAllUnhandledErrors)
-
     }
 
     render() {
@@ -55,70 +53,60 @@ class App extends React.Component {
 
         return (
             <div className="app-wrapper">
-                <HeaderContainer/>
+                <HeaderContainer />
                 <Navbar/>
-                <div className='app-wrapper-content'>
-                    <Switch>
+                    <div className='app-wrapper-content'>
+                        <Switch>
 
-                        <Route exact path={'/'}
-                               render={ () =>  <Redirect to={'/profile'} />  }/>
+                            <Route exact path={'/'}
+                                   render={ () =>  <Redirect to={'/profile'} />  }/>
 
-                        <Route path={'/dialogs'}
-                               render={WithSuspense(DialogsContainer)
-                                   /*    () => {
-                                       return <React.Suspense fallback={ <Preloader /> }>
-                                           <DialogsContainer/>
-                                       </React.Suspense>
-                                   }*/
-                               }/>
-                        <Route path={'/profile/:userId?'}
-                               render={WithSuspense(ProfileContainer)
-                                   /*    () => {
-                                       return <React.Suspense fallback={ <Preloader /> }>
-                                       <ProfileContainer/>
-                                   </React.Suspense>}*/
-                               }/>
-{/*
-                               <Route path={'/dialogs/1'} render={}/>
-
-                               <Route path={'/dialogs/2'} render={}/>
-
-
-                               <Route path={'/dialogs/3'} redenr={}/>
-*/}
-
-
-                        <Route path={'/users'}
-                               render={() =>
-                                   <UsersContainer/>}/>
-                        <Route path={'/login'}
-                               render={() =>
-                                   <Login/>}/>
-                        <Route path={'/news'} render={() => <News/>}/>
-                        <Route path={'/music'} render={() => <Music/>}/>
-                        <Route path={'/settings'} render={() => <Settings/>}/>
-                        <Route path={'*'} render={() => <div>404 NOT FOUND</div>}/>
-                    </Switch>
-                </div>
+                            <Route path={'/dialogs'}
+                                   render={WithSuspense(DialogsContainer)
+                                       /*    () => {
+                                           return <React.Suspense fallback={ <Preloader /> }>
+                                               <DialogsContainer/>
+                                           </React.Suspense>
+                                       }*/
+                                   }/>
+                            <Route path={'/profile/:userId?'}
+                                   render={WithSuspense(ProfileContainer)
+                                       /*    () => {
+                                           return <React.Suspense fallback={ <Preloader /> }>
+                                           <ProfileContainer/>
+                                       </React.Suspense>}*/
+                                   }/>
+                            <Route path={'/users'}
+                                   render={() =>
+                                       <UsersContainer fakeString={'FakeString'} />}/>
+                            <Route path={'/login'}
+                                   render={() =>
+                                       <Login/>}/>
+                            <Route path={'/news'} render={() => <NewsContainer />}/>
+                            <Route path={'/music'} render={() => <Music/>}/>
+                            <Route path={'/settings'} render={() => <Settings/>}/>
+                            <Route path={'*'} render={() => <div>404 NOT FOUND</div>}/>
+                        </Switch>
+                    </div>
             </div>
         );
     }
 }
 
-let mapStateToProps = (state) => ({
+const mapStateToProps = (state) => ({
     initialized: state.app.initialized,
     globalError: state.app.globalError
 })
 
-let AppContainer = compose(
+const AppContainer = compose(
     withRouter,
-    connect(mapStateToProps, {initializeApp, showGlobalError})
+    connect(mapStateToProps, { initializeApp, showGlobalError })
 )(App);
 
-const ErvinJSApp = (props) => {
-    return <BrowserRouter basename={process.env.PUBLIC_URL}>
-        <Provider store={store}>
-            <AppContainer/>
+const ErvinJSApp = () => {
+    return <BrowserRouter basename={ process.env.PUBLIC_URL }>
+        <Provider store={ store }>
+            <AppContainer />
         </Provider>
     </BrowserRouter>
 }

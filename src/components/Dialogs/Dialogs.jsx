@@ -1,21 +1,20 @@
+import DialogsItem from "./DialogsItem/DialogsItem";
+import { maxLength } from "../../utils/validators/validators";
+import Message from "./Message/Message";
+import { Field, reduxForm } from "redux-form";
 import React from 'react'
 import s from './Dialogs.module.css'
-import DialogsItem from "./DialogsItem/DialogsItem";
-import Message from "./Message/Message";
-import {Field, reduxForm} from "redux-form";
-import {Textarea} from "../../common/FormsControls/FormsControls";
-import {maxLength} from "../../utils/validators/validators";
+import { Textarea } from "../../common/FormsControls/FormsControls";
 
 const Dialogs = (props) => {
 
-    let state = props.dialogsPage;
+    const state = props.dialogsPage;
 
-    let dialogsElements = state.dialogs.map(d => <DialogsItem name={d.name} id={d.id}/>);
+    const dialogsElements = state.dialogs.map(d => <DialogsItem name={d.name} id={d.id}/>);
 
     let messagesElements = state.messages.map(m => <Message message={m.message} id={m.id}/>);
-    
 
-    // let newMessageElement = React.createRef();
+// let newMessageElement = React.createRef();
 /*    let onMessageClick = () => {
         props.sendMessage();
     }
@@ -25,7 +24,7 @@ const Dialogs = (props) => {
     }
     */
 
-    let addNewMessage = (values) => {
+    const addNewMessage = (values) => {
         props.sendMessage(values.newMessageBody)
     }
 
@@ -42,12 +41,15 @@ const Dialogs = (props) => {
     )
 }
 
-let maxLength100 = maxLength(100)
+const maxLength100 = maxLength(100)
 
 const AddMessageForm = (props) => {
     return <form onSubmit={props.handleSubmit}>
         <div>
-            <Field component={Textarea} validate={maxLength100} name={'newMessageBody'} placeholder={'Enter new message'} />
+            <Field component={ Textarea }
+                   validate={ maxLength100}
+                   name={ 'newMessageBody' }
+                   placeholder={ 'Enter new message' } />
         </div>
         <div>
             <button className={s.sendMessageBtn}>Send</button>
@@ -56,6 +58,5 @@ const AddMessageForm = (props) => {
 }
 
 const AddMessageReduxForm = reduxForm({form: 'dialogAddMessageForm'})(AddMessageForm)
-
 
 export default Dialogs

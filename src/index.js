@@ -1,11 +1,11 @@
-import React from 'react';
-import ReactDOM from "react-dom";
+import React from 'react'
+import ReactDOM from 'react-dom'
 import './index.css'
-import * as serviceWorker from './serviceWorker';
-import ErvinJSApp from "./App";
+import * as serviceWorker from './serviceWorker'
+import ErvinJSApp from "./App"
 
 
-    ReactDOM.render(<ErvinJSApp/>, document.getElementById('root'));
+    ReactDOM.render( <ErvinJSApp/>, document.getElementById('root') )
 
 
 // If you want your app to work offline and load faster, you can change

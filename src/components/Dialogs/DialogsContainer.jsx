@@ -1,13 +1,11 @@
-import React from 'react'
-
-import {sendMessage} from "../../Redux/dialogs-reducer";
+import { connect } from "react-redux";
+import { compose } from "redux";
 import Dialogs from "./Dialogs";
-import {connect} from "react-redux";
-import {WithAuthRedirect} from "../../hoc/WithAuthRedirect";
-import {compose} from "redux";
+import React from 'react'
+import { sendMessage } from "../../Redux/dialogs-reducer";
+import { WithAuthRedirect } from "../../hoc/WithAuthRedirect";
 
 /*const DialogsContainer = () => {
-
 
     return <StoreContext.Consumer>
         { store => {
@@ -29,9 +27,7 @@ import {compose} from "redux";
     </StoreContext.Consumer>
 }*/
 
-
-
-let mapStateToProps = (state) => {
+const mapStateToProps = (state) => {
     return {
         dialogsPage: state.dialogsPage
     }

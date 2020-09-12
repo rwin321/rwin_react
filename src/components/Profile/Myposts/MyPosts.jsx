@@ -1,18 +1,18 @@
-import React from "react";
-import s from "./MyPosts.module.css";
-import Post from "./Post/Post";
-import {Field, reduxForm} from "redux-form";
-import {maxLength, required} from "../../../utils/validators/validators";
-import {Textarea} from "../../../common/FormsControls/FormsControls";
+import { Field, reduxForm } from "redux-form"
+import { maxLength } from "../../../utils/validators/validators"
+import Post from "./Post/Post"
+import React from "react"
+import s from "./MyPosts.module.css"
+import { Textarea } from "../../../common/FormsControls/FormsControls"
 
-const maxLength10 = maxLength(10)
+const maxLength40 = maxLength(40)
 
 const MyPostsForm = (props) => {
 
     return (
-        <form onSubmit={props.handleSubmit}>
+        <form onSubmit={props.handleSubmit} >
             <div>
-                <Field placeholder={'postText'} validate={[required, maxLength10]}
+                <Field placeholder={'type your post...'} validate={maxLength40}
                        name={'postText'} component={Textarea}/>
             </div>
             <div>
@@ -38,17 +38,13 @@ const MyPosts = React.memo(props => {
     return (
         <div className={s.postsBlock}>
             <h3>My posts</h3>
-            <div>
                 <MyPostReduxForm onSubmit={addNewPost}/>
                 <div className={s.posts}>
                     {postsElements}
                 </div>
-            </div>
         </div>
     );
 });
-
-
 
 export default MyPosts;
 

@@ -1,16 +1,56 @@
 .profileInfoBlock {
-  padding: 5px 5px 10px 5px;
+  max-width: 1960px;
+  margin: 0.4% 0.5% 0.5% 0.5%;
+  padding: 1% 8%;
+  border: 1px solid black;
+  border-radius: 15px;
+  background-color: rgba(149, 129, 210, 0.51);
+
 }
-.profileInfoBlock img{
+
+@media (max-width: 1960px) {
+  .profileInfoBlock {
+    max-width: 1280px;
+  }
+@media (max-width: 1280px) {
+  .profileInfoBlock {
+    max-width: 992px;
+  }
+}
+@media (max-width: 992px) {
+  .profileInfoBlock {
+    max-width: 750px;
+    font-size: 10px;
+  }
+  .profileInfoBlock img{
+    max-width: 150px;
+  }
+  .profileDescp {
+    font-size: 10px;
+   }
+}
+}
+@media (max-width: 767px) {
+  .profileInfoBlock {
+    max-width: none;
+  }
+  .profileInfoBlock img{
+    max-width: 100px;
+  }
+}
+
+.photoCamera {
   display: block;
-  width: 250px;
+  border-radius: 50%;
+  border: 2px solid rgba(8, 53, 64, 0.87);
+  max-width: 250px;
 }
 .contact {
   padding-left: 10px;
 }
 .profileDescp {
   font-family: Georgia;
-  font-size: 15px;
+  font-size: 20px;
   padding: 5px;
 }
 /*.inputFile {
@@ -54,4 +94,9 @@
 }
 .profileDataEditBtn:hover {
   box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 14px 40px 0 rgba(0,0,0,0.19);
+}
+.uploadPhoto {
+  opacity: 0;
+  position: absolute;
+  z-index: -1;
 }
