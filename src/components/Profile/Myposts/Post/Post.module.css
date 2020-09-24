@@ -33,10 +33,13 @@
   border: none;
   cursor: pointer;
   border-radius: 5px;
-  margin-bottom: 20px;
-  margin-right: 10px;
+  margin: 3% 2% 0 0;
   display: inline-block;
 }
 .deleteBtn {
-  margin: -1px 0 0 0;
+  margin-top: 1%;
+}
+.postContent {
+  display: inline-block;
+  margin: 3.5% 0 0 2%;
 }

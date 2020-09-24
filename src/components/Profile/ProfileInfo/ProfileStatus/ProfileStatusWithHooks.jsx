@@ -24,16 +24,16 @@ const ProfileStatusWithHooks = (props) => {
     return (
         <div className={ s.profileStatus }>
             { !editMode &&
-                <div className={s.span}>
+                <div className={ s.span }>
                     <b>Status</b>:
-                    <span onDoubleClick={ activateMode }>{props.status || '---------'}</span>
+                    <span onDoubleClick={ activateMode }>{ props.status || '---------' }</span>
                 </div>
             }
             { editMode &&
                 <div className={s.input}>
-                    <StatusReduxForm onStatusChange={onStatusChange}
-                                     deactivateMode={deactivateMode}
-                                     status={status} />
+                    <StatusReduxForm onStatusChange={ onStatusChange }
+                                     deactivateMode={ deactivateMode }
+                                     status={ status } />
                     { /*<input onChange={onStatusChange} autoFocus={true} value={status} onBlur={deactivateMode}/>*/ }
                 </div>
             }

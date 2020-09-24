@@ -60,7 +60,8 @@ const ProfileData = ({ profile, isOwner, goToEditMode }) => {
         </div>
         }
         <div>
-            <b>Contacts</b>: { Object.keys(profile.contacts).map(key => {
+            <b>Contacts</b>
+            <button></button> { Object.keys(profile.contacts).map(key => {
             return <Contact key={key} contactTitle={key} contactValue={profile.contacts[key]} /> })}
         </div>
         <div>

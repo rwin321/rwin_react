@@ -1,0 +1,111 @@
+$font: Georgia;
+$bgLoginWrapper: linear-gradient(90deg, rgba(136,118,212,1) 17%, rgba(76,169,185,1) 28%,
+        rgba(76,169,185,1) 77%, rgba(100,81,180,1) 90%);
+.loginWrapper {
+  background: rgb(2,0,36);
+  background: $bgLoginWrapper;
+  display: flex;
+  justify-content: center;
+  border: 1px solid black;
+  border-radius: 15px;
+  margin: 20% 0 0 -0.2%;
+  width: 100%;
+  font-size: 40px;
+  .login {
+    border-radius: 15px;
+    padding: 2%;
+    background: rgb(80,108,113);
+    background: linear-gradient(90deg, rgba(80,108,113,1) 28%, rgba(53,118,131,1) 62%);
+    display: block;
+    font-family: $font;
+    max-width: 100%;
+    &:hover {
+      transition-duration: 1s;
+      box-shadow: 2px 2px 10px black;
+      border: 1px solid black;
+
+    }
+    .title {
+      text-align: center;
+      font-size: 35px;
+      margin: 0 0 10% 0;
+    }
+    .loginBtn {
+      background-color: #f5eded;
+      color: #403d3d;
+      font-size: 16px;
+      border: none;
+      cursor: pointer;
+      border-radius: 5px;
+      margin-bottom: 20px;
+    }
+    .loginBtn:hover {
+      box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 14px 40px 0 rgba(0,0,0,0.19);
+    }
+    .inline {
+      margin-left: 4%;
+      display:inline-block;
+      margin-right:5px;
+      font-size: 14px;
+    }
+  }
+}
+.field {
+  font: $font;
+  font-size: 20px;
+  padding: 4%;
+  border-radius: 15px;
+  margin: 2%;
+  &:focus {
+    box-shadow: 2px 2px 5px 5px black;
+  }
+}
+
+@media (max-width: 2160px) {
+  .loginWrapper {
+    .login {
+
+    }
+    max-width: 1960px;
+  }
+}
+@media (max-width: 1960px) {
+  .loginWrapper {
+    .login {
+
+    }
+    max-width: 1280px;
+  }
+}
+@media (max-width: 1280px) {
+  .loginWrapper {
+    .login {
+      font-size: 30px;
+    }
+    max-width: 992px;
+  }
+}
+@media (max-width: 992px) {
+  .loginWrapper {
+    .login {
+      font-size: 25px;
+    }
+    max-width: 750px;
+  }
+}
+@media (max-width: 768px) {
+  .loginWrapper {
+    .login {
+      font-size: 18px;
+    }
+    max-width: 412px;
+  }
+}
+@media (max-width: 414px) {
+  .loginWrapper {
+    .login {
+      font-size: 12px;
+    }
+    max-width: 400px;
+  }
+}

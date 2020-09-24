@@ -50,9 +50,7 @@ const dialogsReducer = (state = initialState, action: any):InitialStateType => {
             return stateCopy;*/
         }
         default:
-            return state;
-
-            
+            return state
     }
 }
 type SendMessageType = {

@@ -71,43 +71,43 @@ const usersReducer = (state = initialState, action: ActionsTypes): initialStateT
 
 type ActionsTypes = FollowSuccesType | UnFollowSuccesType | SetUsersType | SetCurrentPageType | SetTotalUsersCountType | SetPreloaderType | ToogleFollowingProgressType
 
-type FollowSuccesType  = {
+type FollowSuccesType = {
     type: typeof FOLLOW,
     userId: number
 }
 export const followSucces = (userId: number): FollowSuccesType => ({type: FOLLOW, userId})
 
-type UnFollowSuccesType  = {
+type UnFollowSuccesType = {
     type: typeof UNFOLLOW,
     userId: number
 }
 export const unFollowSucces = (userId:number): UnFollowSuccesType => ({type: UNFOLLOW, userId})
 
-type SetUsersType  = {
+type SetUsersType = {
     type: typeof SET_USERS,
     users: Array<UsersType>
 }
 export const setUsers = (users: Array<UsersType>): SetUsersType => ({type: SET_USERS, users})
 
-type SetCurrentPageType  = {
+type SetCurrentPageType = {
     type: typeof SET_CURRENT_PAGE,
     currentPage: number
 }
 export const setCurrentPage = (currentPage: number): SetCurrentPageType => ({type: SET_CURRENT_PAGE, currentPage})
 
-type SetTotalUsersCountType  = {
+type SetTotalUsersCountType = {
     type: typeof SET_TOTAL_USERS_COUNT,
     count: number
 }
 export const setTotalUsersCount = (totalUserCount: number): SetTotalUsersCountType => ({type: SET_TOTAL_USERS_COUNT, count: totalUserCount})
 
-type SetPreloaderType  = {
+type SetPreloaderType = {
     type: typeof TOOGLE_IS_FETCHING,
     isFetching: boolean
 }
 export const setPreloader = (isFetching: boolean): SetPreloaderType => ({type: TOOGLE_IS_FETCHING, isFetching})
 
-type ToogleFollowingProgressType  = {
+type ToogleFollowingProgressType = {
     type: typeof TOOGLE_IS_FOLLOWING_PROGRESS,
     isFetching: boolean,
     userId: number
@@ -119,7 +119,7 @@ type DispatchType = Dispatch<ActionsTypes>
 type ThunkType = ThunkAction<Promise<void>, AppStateType, unknown, ActionsTypes>
 
 export const requestUsers = (page: number, pageSize: number): ThunkType => {
-    return async (dispatch, getState)  => {
+    return async (dispatch, getState: GetStateType)  => {
 
         dispatch(setPreloader(true))
         dispatch(setCurrentPage(page))

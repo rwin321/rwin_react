@@ -1,36 +1,51 @@
 import React from  'react'
-import {Field, reduxForm} from "redux-form";
-import {createField, Input} from "../../common/FormsControls/FormsControls";
-import {required} from "../../utils/validators/validators";
-import {connect} from "react-redux";
-import {login} from "../../Redux/auths-reducer";
-import {Redirect} from "react-router-dom";
+import { Field, reduxForm } from "redux-form"
+import { createField, Input } from "../../common/FormsControls/FormsControls"
+import { required } from "../../utils/validators/validators"
+import { connect } from "react-redux"
+import { login } from "../../Redux/auths-reducer"
+import { Redirect } from "react-router-dom"
 import styles from './../../common/FormsControls/FormsControls.module.css'
-import s from './Login.module.css'
+/*import s from './Login.module.css'*/
+import './login.scss'
 
 const LoginForm = (props) => {
     return (
-        <form onSubmit={props.handleSubmit}>
+        <form onSubmit={ props.handleSubmit }>
             <div>
-                <Field placeholder={'Email'} validate={[required]} name={'email'} component={Input}/>
+                <Field className='field'
+                       placeholder={'Email'}
+                       validate={[ required ]}
+                       name={'email'}
+                       component={ Input }/>
             </div>
             <div>
-                <Field placeholder={'password'}validate={[required]} name={'password'} component={Input} type={'password'}/>
+                <Field className='field'
+                       placeholder = {'password'}
+                       validate = {[ required ]}
+                       name = {'password'}
+                       component = { Input }
+                       type = {'password'} />
             </div>
-            <div className={s.inline}>
-                <Field component={Input} name={'rememberMe'} type={'checkbox'}/> remember me
+            <div className='inline'>
+                <Field className='field'
+                       component={ Input }
+                       name={'rememberMe'}
+                       type={'checkbox'}/> remember me
             </div>
-            <div className={s.inline}>
-                <button className={s.loginBtn}>Login</button>
+            <div className='inline'>
+                <button className='loginBtn'>Login</button>
             </div>
 
             { props.captchaUrl && <img src={props.captchaUrl} /> }
 
-            { props.captchaUrl && createField('write secrete code to confirm that ou are a human', 'captcha', [required], Input) }
+            { props.captchaUrl &&
+            createField('write secrete code to confirm that ou are a human', 'captcha',
+                [required], Input) }
 
             {
                 props.error && <div className={styles.formSummaryError}>
-                {props.error}
+                { props.error }
             </div>
             }
         </form>
@@ -52,9 +67,11 @@ const Login = (props) => {
         return <Redirect to={'/profile'}/>
     }
 
-    return <div className={s.login}>
-        <h1>Log In</h1>
-        <LoginReduxForm captchaUrl={props.captchaUrl} onSubmit={onSubmit}/>
+    return <div className='loginWrapper'>
+        <div class='login'>
+            <h1 className='title'>Log In</h1>
+            <LoginReduxForm captchaUrl={ props.captchaUrl } onSubmit={ onSubmit }/>
+        </div>
     </div>
 }
 

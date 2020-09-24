@@ -1,11 +1,11 @@
 .nav {
   grid-area: n;
   background-color: rgba(107, 73, 229, 0.51);
-  padding: 1%;
-  margin: 5px 5px 5px 10px;
-  font-family: Georgia;
+  padding: 10% 1% 1% 1%;
+  margin: 1% 1% 1% 2%;
   border: 1px solid black;
   border-radius: 15px;
+  font-family: Georgia;
   text-align: center;
   font-size: 25px;
 }
@@ -45,6 +45,7 @@
 }
 .item:hover {
   text-shadow: 2px 2px 3px black;
+  transition-duration: 0.8s;
 }
 .sideBarTitle {
   padding-top: 5%;

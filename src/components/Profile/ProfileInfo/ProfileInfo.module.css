@@ -39,6 +39,15 @@
   }
 }
 
+.contactsMore {
+  margin: 0.5% 0 0 1%;
+  background-color: #e7e0fc;
+  border-radius: 50%;
+}
+.contactsMore:hover {
+  box-shadow: 2px 2px 5px #383739;
+}
+
 .photoCamera {
   display: block;
   border-radius: 50%;

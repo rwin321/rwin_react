@@ -8,7 +8,7 @@ const maxLength20 = maxLength(20)
 const StatusForm = ({ onStatusChange, status, deactivateMode }) => {
     return <form>
         <div>
-            <Field onChange={onStatusChange} autoFocus={true} value = {status}
+            <Field onChange={ onStatusChange } autoFocus={ true } value = { status }
                    validate={ maxLength20 } name={'status'} onBlur={ deactivateMode }
                    component={ Input } />
         </div>
