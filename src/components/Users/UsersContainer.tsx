@@ -56,7 +56,7 @@ class UsersContainer extends React.Component<PropsType> {
     }
 
     onPageChanged = ( pageNumber: number ) => {
-        const {pageSize} = this.props
+        const { pageSize } = this.props
         this.props.getUsers(pageNumber, pageSize)
     }
 

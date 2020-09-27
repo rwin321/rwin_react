@@ -28,8 +28,9 @@ const appReducer = (state: initialStateType = initialState, action: any): initia
         default:
             return state;
     }
-
 }
+
+type ActionTypes = InitializedSuccesActionType | CatchGlobalErrorType
 
 type InitializedSuccesActionType = {
     type: typeof INITIALIZED_SUCCESS // 'INITIALIZED_SUCCESS'

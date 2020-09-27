@@ -86,11 +86,12 @@ type DeletePostType = {
 export const deletePost = (postId: number): DeletePostType => ({type: DELETE_POST, postId})
 
 type ThunkType = ThunkAction<Promise<void>, AppStateType, unknown, ActionsTypes>
+type GetState = () => AppStateType
 
 export const getUserProfile = (userId: number): ThunkType => {
     return async (dispatch) => {
         const response = await profileAPI.getProfile(userId)
-        dispatch(setUserProfile(response.data));
+        dispatch(setUserProfile(response.data))
     }
 }
 export const getUserStatus = (userId: number): ThunkType => {
@@ -107,8 +108,8 @@ export const savePhoto = (file: any): ThunkType => {
         }
     }
 }
-export const saveProfile = (profile: ProfileType): ThunkType =>
-    async (dispatch: any, getState) => {
+export const saveProfile = (profile: ProfileType) =>
+    async (dispatch: any, getState: any) => {
         const response = await profileAPI.saveProfileInfo(profile)
         const userId = getState().auth.userId
         if (response.data.resultCode === 0) {

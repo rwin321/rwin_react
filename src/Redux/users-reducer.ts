@@ -1,9 +1,9 @@
+import { AppStateType } from "./redux-store"
+import { Dispatch } from "redux"
 import { usersAPI } from "../api/api"
 import { objMappingArr } from "../utils/objectHelpers"
+import { ThunkAction } from "redux-thunk";
 import { UsersType } from './../types/types'
-import {AppStateType} from "./redux-store";
-import {Dispatch} from "redux";
-import {ThunkAction} from "redux-thunk";
 
 const FOLLOW = 'users/FOLLOW'
 const UNFOLLOW = 'users/UNFOLLOW'
@@ -30,7 +30,9 @@ const usersReducer = (state = initialState, action: ActionsTypes): initialStateT
             return {
                 ...state,
                 //users: [...state.users]
-                users: objMappingArr(state.users, action.userId, 'id', {followed: true})
+                users: objMappingArr(state.users, action.userId,
+                    'id',
+                    { followed: true })
                 /*state.users.map(u => {
                     if (u.id === action.userId) {
                         return {...u, followed: true}

@@ -97,7 +97,12 @@ h6 {
     grid-area: c;
     max-width: 100%;
 }
-
+@media (max-width: 1960px) {
+    .app-wrapper {
+        max-width: 1280px;
+        min-height: 950px;
+    }
+}
 @media (max-width: 1960px) {
     .app-wrapper {
         max-width: 1280px;
