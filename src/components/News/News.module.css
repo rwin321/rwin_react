@@ -1,3 +1,8 @@
-.news {
-    font-style: italic;
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 1% 0 0 .5%;
+}
+.container div {
+    margin-right: 4%;
 }

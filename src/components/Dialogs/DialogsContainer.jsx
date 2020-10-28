@@ -43,7 +43,7 @@ const mapStateToProps = (state) => {
 //So now we don't use mapDispatchToProps, we use instead just name of our AC in connect func, which automatically making same
 
 export default compose(
-    connect(mapStateToProps, {sendMessage}),
+    connect(mapStateToProps, { sendMessage }),
     WithAuthRedirect
 )(Dialogs)
 

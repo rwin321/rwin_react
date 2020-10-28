@@ -12,21 +12,18 @@ import './login.scss'
 const LoginForm = (props) => {
     return (
         <form onSubmit={ props.handleSubmit }>
-            <div>
                 <Field className='field'
                        placeholder={'Email'}
                        validate={[ required ]}
                        name={'email'}
                        component={ Input }/>
-            </div>
-            <div>
+
                 <Field className='field'
                        placeholder = {'password'}
                        validate = {[ required ]}
                        name = {'password'}
                        component = { Input }
                        type = {'password'} />
-            </div>
             <div className='inline'>
                 <Field className='field'
                        component={ Input }
@@ -68,8 +65,8 @@ const Login = (props) => {
     }
 
     return <div className='loginWrapper'>
-        <div class='login'>
-            <h1 className='title'>Log In</h1>
+        <div className='login'>
+            <h1 className='title'>log In</h1>
             <LoginReduxForm captchaUrl={ props.captchaUrl } onSubmit={ onSubmit }/>
         </div>
     </div>

@@ -1,14 +1,15 @@
 $font: Georgia;
-$bgLoginWrapper: linear-gradient(90deg, rgba(136,118,212,1) 17%, rgba(76,169,185,1) 28%,
-        rgba(76,169,185,1) 77%, rgba(100,81,180,1) 90%);
+$bgLoginWrapper: linear-gradient(90deg, rgb(255, 255, 255) 17%, rgba(76,169,185,1) 28%,
+        rgba(76,169,185,1) 77%, rgb(255, 255, 255) 90%);
 .loginWrapper {
-  background: rgb(2,0,36);
-  background: $bgLoginWrapper;
+  /*background: rgb(2,0,36);
+  background: $bgLoginWrapper;*/
   display: flex;
+  position: fixed;
   justify-content: center;
   border: 1px solid black;
   border-radius: 15px;
-  margin: 20% 0 0 -0.2%;
+  margin: 10% 0 0 -0.2%;
   width: 100%;
   font-size: 40px;
   .login {
@@ -21,7 +22,7 @@ $bgLoginWrapper: linear-gradient(90deg, rgba(136,118,212,1) 17%, rgba(76,169,185
     max-width: 100%;
     &:hover {
       transition-duration: 1s;
-      box-shadow: 2px 2px 10px black;
+      box-shadow: 2px 2px 4px black;
       border: 1px solid black;
 
     }
@@ -40,7 +41,7 @@ $bgLoginWrapper: linear-gradient(90deg, rgba(136,118,212,1) 17%, rgba(76,169,185
       margin-bottom: 20px;
     }
     .loginBtn:hover {
-      box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 14px 40px 0 rgba(0,0,0,0.19);
+      box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24), 0 14px 40px 0 rgba(0,0,0,0.19);
     }
     .inline {
       margin-left: 4%;

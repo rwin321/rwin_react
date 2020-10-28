@@ -1,17 +1,16 @@
 import React from 'react';
-import {connect} from "react-redux";
+import { connect } from "react-redux";
 import News from "./News";
+import newsReducer from "../../Redux/news-reducer.ts";
 
 class NewsContainer extends React.Component {
-
     render() {
-        return <News likesCount={this.props.likesCount} />
+        return <News news={ this.props.news } />
     }
-
 }
 const mapStateToProps = (state) => {
     return {
-        likesCount: state.news.likesCount
+        news: state.news.news
     }
 }
 export default connect(mapStateToProps, {})(NewsContainer);

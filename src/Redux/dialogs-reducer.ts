@@ -6,7 +6,8 @@ type DialogType = {
 }
 type MessageType = {
     id: number,
-    message: string
+    message: string,
+    lastElem?: number
 }
 const initialState = {
     dialogs: [
@@ -38,9 +39,10 @@ const dialogsReducer = (state = initialState, action: ActionTypes): InitialState
     switch(action.type) {
         case CREATE_MESSAGE: {
             let body = action.newMessageBody;
+
             return {
                 ...state,
-                messages: [...state.messages, {id: 6, message: body}]
+                messages: [...state.messages, {id: 9, message: body}]
             }
             /*let stateCopy = {...state};
             stateCopy.messages = [...state.messages]

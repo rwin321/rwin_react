@@ -19,8 +19,6 @@ import { initializeApp, showGlobalError } from "./Redux/app-reducer"
 import Preloader from "./common/Preloader/Preloader"
 import store from "./Redux/redux-store"
 import { WithSuspense } from "./hoc/WithSuspense"
-
-
 //import DialogsContainer from "./components/Dialogs/DialogsContainer";
 //Makes app's 1st download faster. When user will tap on these routes, so then app will load them
 const DialogsContainer = React.lazy(() => import('./components/Dialogs/DialogsContainer') )
@@ -66,7 +64,6 @@ class App extends React.Component {
 
                             <Route exact path={'/'}
                                    render={ () =>  <Redirect to={'/profile'} />  }/>
-
                             <Route path={'/dialogs'}
                                    render = { WithSuspense(DialogsContainer)
                                        /*    () => {
@@ -84,7 +81,7 @@ class App extends React.Component {
                                    }/>
                             <Route path={'/users'}
                                    render={() =>
-                                       <UsersContainer fakeString={'FakeString'} />}/>
+                                       <UsersContainer />}/>
                             <Route path={'/login'}
                                    render={() =>
                                        <Login/>}/>

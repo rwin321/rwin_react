@@ -10,7 +10,7 @@ const Header = (props) => {
                  src="https://www.brandcrowd.com/gallery/brands/pictures/picture15389364263661.jpg"
                  alt='Ervin_just_Win'/>
         </NavLink>
-        <div className={s.hoverLogoTitle}>
+{/*        <div className={s.hoverLogoTitle}>
             <div className={s.item}>
                 <NavLink to='/profile' activeClassName = { s.active }>Profile</NavLink>
             </div>
@@ -29,12 +29,12 @@ const Header = (props) => {
             <div className={s.item}>
                 <NavLink to='/settings' activeClassName={ s.active }>Settings</NavLink>
             </div>
-        </div>
+        </div>*/}
         <div className={ s.title }>
             <span className={ s.titleText }>Find friend</span>
         </div>
          <div className={s.smallTitle} >
-            <span className={s.smallTitleText}>Ff</span>
+            <span className={ s.smallTitleText }>Ff</span>
         </div>
       <div className = { s.loginBlock }>
               {
@@ -46,7 +46,9 @@ const Header = (props) => {
                       <button className = { s.logoutBtn }
                               onClick = { props.logout }> log out </button>
                   </div>
-                  : <NavLink to= {'/login'}>login</NavLink>
+                  : <div className={s.loginNameContainer}>
+                          <NavLink to= {'/login'}>login</NavLink>
+                      </div>
               }
       </div>
     </header>

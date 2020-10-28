@@ -1,0 +1,23 @@
+.container {
+    display: flex;
+    flex-direction: row;
+}
+.title {
+    display: inline-block;
+    border-bottom: 2px solid black;
+}
+.img {
+    width: 150px;
+    margin: 1% 0 0 0;
+}
+.img:hover {
+    border: 2px solid black;
+    transition: 0.4s;
+}
+.newsItem {
+    width: 350px;
+    margin: 0 0 2% 0;
+    padding: 1%;
+    border: 1px solid black;
+    border-radius: 10px;
+}
