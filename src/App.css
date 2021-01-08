@@ -81,7 +81,7 @@ h6 {
 }
 
 .app-wrapper {
-    margin: 0px auto;
+    margin: 0 auto;
     display: grid;
     width: auto;
     max-width: 1960px;

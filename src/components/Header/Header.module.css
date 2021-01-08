@@ -5,6 +5,8 @@
 
 .header {
   grid-area: h;
+  display: flex;
+  justify-content: space-between;
   background-color: rgba(99, 69, 203, 1);
   border-style: double;
   border-width: 2mm;
@@ -34,8 +36,7 @@
 .loginBlock {
   float: right;
   font-family: Georgia;
-  font-size: 10px;
-  margin: -0.8% 0 0 2%;
+  font-size: 1rem;
 }
 .loginName {
   display: inline-block;
@@ -55,17 +56,11 @@
   composes: deleteBtn from '../../components/Profile/Myposts/Post/Post.module.css';
   background-color: #7d90a7;
   font-size: 14px;
-  margin: 4% 0 0 4%;
-  padding: 2%;
+  margin: 0 1em;
 }
 .logoutBtn:hover {
-  box-shadow: 2px 0 5px black;
-  border: 1px solid black;
-  transition-duration: 0.5s;
-  font-size: 16px;
-}
-.logoutBtn:hover {
-  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 14px 40px 0 rgba(0,0,0,0.19);
+  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),
+              0 14px 40px 0 rgba(0,0,0,0.19);
 }
 .smallTitle {
   display: none;
@@ -74,7 +69,7 @@
   margin-top: 3%;
 }
 .smallTitleText {
-  font-size: 16px;
+  font-size: 2.5em;
 }
 .loginNameContainer {
   font-size: 20px;
@@ -91,7 +86,7 @@
     margin-top: 2%;
   }
 }
-@media (max-width: 380px) {
+@media (max-width: 390px) {
   .header {
     max-width: 100%;
   }
@@ -100,6 +95,8 @@
   }
   .smallTitle {
     display: inline-block;
+    padding: 0 2em 0 0;
+
   }
   .smallLogo:hover {
 

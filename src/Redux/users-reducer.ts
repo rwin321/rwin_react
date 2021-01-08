@@ -116,12 +116,12 @@ type ToogleFollowingProgressType = {
 }
 export const toogleFollowingProgress = (isFetching: boolean, userId: number): ToogleFollowingProgressType => ({type: TOOGLE_IS_FOLLOWING_PROGRESS, isFetching, userId})
 
-type GetStateType = () => AppStateType
+//type GetStateType = () => AppStateType
 type DispatchType = Dispatch<ActionsTypes>
 type ThunkType = ThunkAction<Promise<void>, AppStateType, unknown, ActionsTypes>
 
 export const requestUsers = (page: number, pageSize: number): ThunkType => {
-    return async (dispatch, getState: GetStateType)  => {
+    return async (dispatch)  => {
 
         dispatch(setPreloader(true))
         dispatch(setCurrentPage(page))
