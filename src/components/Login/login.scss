@@ -1,65 +1,45 @@
 $font: Georgia;
-$bgLoginWrapper: linear-gradient(90deg, rgb(255, 255, 255) 17%, rgba(76,169,185,1) 28%,
-        rgba(76,169,185,1) 77%, rgb(255, 255, 255) 90%);
+@import "~bootstrap/scss/bootstrap";
+
 .loginWrapper {
-  /*background: rgb(2,0,36);
-  background: $bgLoginWrapper;*/
   display: flex;
-  position: fixed;
   justify-content: center;
-  border: 1px solid black;
-  border-radius: 15px;
   margin: 10% 0 0 -0.2%;
   width: 100%;
   font-size: 40px;
   .login {
     border-radius: 15px;
     padding: 2%;
-    background: rgb(80,108,113);
-    background: linear-gradient(90deg, rgba(80,108,113,1) 28%, rgba(53,118,131,1) 62%);
     display: block;
     font-family: $font;
     max-width: 100%;
-    &:hover {
-      transition-duration: 1s;
-      box-shadow: 2px 2px 4px black;
-      border: 1px solid black;
-
-    }
     .title {
       text-align: center;
       font-size: 35px;
       margin: 0 0 10% 0;
+      color: white;
     }
     .loginBtn {
-      background-color: #f5eded;
-      color: #403d3d;
-      font-size: 16px;
-      border: none;
-      cursor: pointer;
-      border-radius: 5px;
-      margin-bottom: 20px;
+      color: #ffffff;
     }
     .loginBtn:hover {
-      box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24), 0 14px 40px 0 rgba(0,0,0,0.19);
+      border: 1px solid #ffffff;
     }
     .inline {
       margin-left: 4%;
       display:inline-block;
       margin-right:5px;
       font-size: 14px;
+      color: white;
     }
   }
 }
 .field {
   font: $font;
-  font-size: 20px;
+  font-size: 1rem;
   padding: 4%;
   border-radius: 15px;
   margin: 2%;
-  &:focus {
-    box-shadow: 2px 2px 5px 5px black;
-  }
 }
 
 @media (max-width: 2160px) {

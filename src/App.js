@@ -36,6 +36,7 @@ class App extends React.Component {
 		console.log('Some Error')
 	}
 
+	//Initializing app
 	componentDidMount() {
 		this.props.initializeApp()
 		// Previous version (refactored):
@@ -60,42 +61,44 @@ class App extends React.Component {
 		return (
 			<div className = "app-wrapper">
 				<HeaderContainer />
-				<Navbar />
-				<div className = 'app-wrapper-content'>
-					<Switch>
-
-						<Route exact path = {'/'}
-						       render = {() =>
-							       <Redirect to = {'/profile'} />} />
-						<Route path = {'/dialogs'}
-						       render = {WithSuspense(DialogsContainer)
-							       /*    () => {
-									   return <React.Suspense fallback={ <Preloader /> }>
-										   <DialogsContainer/>
-									   </React.Suspense>
-								   }*/
-						       } />
-						<Route path = {'/profile/:userId?'}
-						       render = {WithSuspense(ProfileContainer)
-							       /*    () => {
-									   return <React.Suspense fallback={ <Preloader /> }>
-									   <ProfileContainer/>
-								   </React.Suspense>}*/
-						       } />
-						<Route path = {'/users'}
-						       render = {() =>
-							       <UsersContainer />} />
-						<Route path = {'/login'}
-						       render = {() =>
-							       <Login />} />
-						<Route path = {'/news'}
-						       render = {() => <NewsContainer />} />
-						<Route path = {'/music'} render = {() => <Music />} />
-						<Route path = {'/settings'}
-						       render = {() => <Settings />} />
-						<Route path = {'*'}
-						       render = {() => <div>404 NOT FOUND</div>} />
-					</Switch>
+				<div className = 'navbarContainer'>
+					<Navbar />
+				</div>
+				<div
+					className = 'app-wrapper-content container'
+					id = 'navbar__menu'>
+					<React.Suspense fallback = {<Preloader />}>
+						<Switch>
+							<Route
+								exact path = {'/'}
+								render = {() =>
+									<Redirect to = {'/profile'} />} />
+							<Route
+								path = {'/dialogs'}
+								render = {() => <DialogsContainer />} />
+							<Route
+								path = {'/profile/:userId?'}
+								render = {() => <ProfileContainer />} />
+							<Route
+								path = {'/users'}
+								render = {() => <UsersContainer />} />
+							<Route
+								path = {'/login'}
+								render = {() => <Login />} />
+							<Route
+								path = {'/news'}
+								render = {() => <NewsContainer />} />
+							<Route
+								path = {'/music'}
+								render = {() => <Music />} />
+							<Route
+								path = {'/settings'}
+								render = {() => <Settings />} />
+							<Route
+								path = {'*'}
+								render = {() => <div>404 NOT FOUND</div>} />
+						</Switch>
+					</React.Suspense>
 				</div>
 			</div>
 		);

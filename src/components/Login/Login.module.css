@@ -1,24 +1,42 @@
-.login {
-    font-family: Georgia;
-    font-size: 13px;
-    top: 50%;
+.loginWrapper {
+    display: flex;
+    justify-content: center;
+    margin: 10% 0 0 -0.2%;
     width: 100%;
+    font-size: 40px;
+}
+.login {
+    border-radius: 15px;
+    padding: 2%;
+    display: block;
+    font-family: 'Georgia';
+    max-width: 100%;
+}
+.title {
     text-align: center;
+    font-size: 35px;
+    margin: 0 0 10% 0;
+    color: white;
 }
+
 .loginBtn {
-    background-color: #f5eded;
-    color: #403d3d;
-    font-size: 16px;
-    border: none;
-    cursor: pointer;
-    border-radius: 5px;
-    margin-bottom: 20px;
-    font-family: Georgia;
+    color: #ffffff;
 }
+
 .loginBtn:hover {
-    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 14px 40px 0 rgba(0,0,0,0.19);
+    border: 1px solid #ffffff;
 }
+
 .inline {
-    display:inline-block;
-    margin-right:5px;
+    margin-left: 4%;
+    display: inline-block;
+    margin-right: 5px;
+    font-size: 14px;
+    color: white;
+}
+.field {
+    font-size: 1rem;
+    padding: 4%;
+    border-radius: 15px;
+    margin: 2%;
 }

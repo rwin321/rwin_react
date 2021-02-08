@@ -90,12 +90,15 @@ h6 {
     grid-template-areas: "h h" "n c";
     grid-template-rows: 60px 1fr;
     grid-template-columns: 2fr 10fr;
-    background-color: rgba(40, 11, 170, 0.507);
+    background-color: #808ce5;
 }
 
 .app-wrapper-content {
     grid-area: c;
     max-width: 100%;
+}
+.showNavbar {
+    display: none;
 }
 @media (max-width: 1960px) {
     .app-wrapper {
@@ -134,5 +137,22 @@ h6 {
     .app-wrapper {
         max-width: 370px;
         min-height: 667px;
+    }
+}
+@media (max-width: 414px ) {
+    .navbarContainer {
+        display: none;
+    }
+}
+@media (max-width: 414px ) {
+    .app-wrapper {
+        grid-template-areas: "h h" "c";
+        grid-template-rows: 60px 1fr;
+        grid-template-columns: 12fr;
+    }
+}
+@media (max-width: 414px ) {
+    .showNavbar {
+        display: block;
     }
 }

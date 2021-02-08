@@ -1,66 +1,48 @@
+
 .nav {
-  grid-area: n;
-  height: 900px;
-  background-color: rgba(107, 73, 229, 0.51);
-  padding: 10% 1% 1% 1%;
-  margin: 1% 1% 1% 2%;
-  border: 1px solid black;
-  border-radius: 15px;
-  font-family: Georgia;
-  text-align: center;
-  font-size: 25px;
+    grid-area: n;
+    height: 900px;
+    background-color: rgba(107, 73, 229, 0.51);
+    padding: 10% 1% 1% 1%;
+    margin: 1% 1% 1% 2%;
+    border: 1px solid black;
+    border-radius: 15px;
+    font-family: Georgia;
+    text-align: center;
+    font-size: 25px;
 }
 
-@media (max-width: 1960px) {
-  .nav {
-    max-width: 1280px;
-  }
-  @media (max-width: 1280px) {
-    .nav {
-      max-width: 992px;
-    }
-  }
-  @media (max-width: 992px) {
-    .nav {
-      max-width: 750px;
-    }
-  }
-}
 @media (max-width: 767px) {
-  .nav {
-    max-width: 650px;
-    font-size: 16px;
-  }
-}
-@media (max-width: 400px) {
-  .nav {
-    display: none;
-  }
+    .nav {
+        max-width: 650px;
+        font-size: 16px;
+    }
 }
 
 .item a {
-  font-family: Georgia;
-  text-decoration-line: unset;
-  letter-spacing: 1px;
-  color: white;
-  margin-left: 5px;
+    font-family: Georgia;
+    letter-spacing: 1px;
+    color: white;
+    margin-left: 5px;
 }
-.item a.active {
-  color: rgb(54, 10, 36);
-  text-shadow: none;
-}
-.item:hover {
-  text-shadow: 2px 2px 3px black;
-  transition-duration: .4s;
-}
-.sideBarTitle {
-  padding-top: 5%;
-}
-.sideBarItems {
 
+.item a.active {
+    color: rgb(54, 10, 36);
+    text-shadow: none;
+    text-decoration: unset;
 }
+
+.item>a:hover {
+  text-decoration: none;
+    transition-duration: .4s;
+}
+
+.sideBarTitle {
+    padding-top: 5%;
+}
+
 .sideBarItem {
-  width: 50px;
-  padding: 2px;
+    width: 50px;
+    padding: 2px;
 }
 

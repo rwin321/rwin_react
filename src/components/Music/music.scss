@@ -1,7 +1,9 @@
-.music {
-  display: inline-block;
-  position: fixed;
-  margin: 10px 0 0 0;
-  font-size: 30px;
-  border: 1px solid black;
+.nav {
+  &>div {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    >div {
+    }
+  }
 }

@@ -32,7 +32,7 @@ const Users: React.FC<PropsType> = ( props ) => {
         <div className={s.users}>
             <Paginator totalItemsCount={ totalUserCount } pageSize={ pageSize }
                        currentPage={ currentPage } onPageChanged={ onPageChanged }/>
-            <div>
+            <div className={s.users__container}>
                 {
                     users.map( u => <User key={u.id}
                                           user={u}

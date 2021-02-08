@@ -6,8 +6,9 @@ import { connect } from "react-redux"
 import { login } from "../../Redux/auths-reducer"
 import { Redirect } from "react-router-dom"
 import styles from './../../common/FormsControls/FormsControls.module.css'
-/*import s from './Login.module.css'*/
 import './login.scss'
+import 'bootstrap/dist/css/bootstrap-grid.min.css'
+import { Button } from 'react-bootstrap'
 
 const LoginForm = (props) => {
     return (
@@ -25,13 +26,17 @@ const LoginForm = (props) => {
                        component = { Input }
                        type = {'password'} />
             <div className='inline'>
-                <Field className='field'
+                <Field className='field rememberMe'
                        component={ Input }
                        name={'rememberMe'}
                        type={'checkbox'}/> remember me
             </div>
             <div className='inline'>
-                <button className='loginBtn'>Login</button>
+                <button
+                    type = "submit"
+                    className = 'loginBtn btn btn-outline-dark'
+                    >log in
+                </button>
             </div>
 
             { props.captchaUrl && <img src={props.captchaUrl} /> }

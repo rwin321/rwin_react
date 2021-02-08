@@ -1,6 +1,4 @@
-.menu {
-
-}
-.menuBtn {
-    margin: 1% 0 0 0;
+.navMenu {
+    display: flex;
+    flex-direction: column;
 }

@@ -1,25 +1,25 @@
 .paginator {
     display: flex;
-    justify-content: center;
-    max-width: 1960px;
+    justify-content: space-evenly;
 }
 .pages {
-    display: inline-block;
-    margin-top: 3%;
-
+    /*display: inline-block;*/
+    /*margin-top: 3%;*/
+    display: flex;
+    justify-content: center;
 }
 .pageNumber {
-    margin: 1%;
+    cursor: pointer;
+    margin: .2em;
 }
 .selectedPage.pageNumber{
     color: black;
-    padding: 1.5%;
     font-weight: bold;
     border: 1px solid black;
 }
 .btn {
     composes: deleteBtn from '../../components/Profile/Myposts/Post/Post.module.css';
-    padding: 5px 15px 5px 15px;
+    padding: .2em .5em;
     margin: 2.5% 10%;
     display: inline-block;
 }
@@ -41,5 +41,12 @@
 @media (max-width: 767px) {
     .paginator {
         max-width: none;
+    }
+}
+
+@media (max-width: 400px) {
+    .btn {
+        font-size: .8rem;
+        margin: 0 .5em;
     }
 }

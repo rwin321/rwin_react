@@ -1,45 +1,34 @@
-import React, { useState } from 'react'
-import { reduxForm, Field } from 'redux-form'
-import { Input } from '@material-ui/core';
-import './settings.scss'
-import FormControl from "@material-ui/core/FormControl";
-import InputLabel from "@material-ui/core/InputLabel";
-import FormHelperText from "@material-ui/core/FormHelperText";
-import makeStyles from "@material-ui/core/styles/makeStyles";
-
-const useStyles = makeStyles((theme) => ({
-    root: {
-        '& > *': {
-            margin: theme.spacing(1),
-        },
-    },
-}));
+import React, {useState} from 'react'
+import s from './Settings.module.css'
+import Navbar from 'react-bootstrap/Navbar'
+import Nav from 'react-bootstrap/Nav'
+import NavDropdown from 'react-bootstrap//NavDropdown'
+import {NavLink} from "react-router-dom";
 
 const Settings = (props) => {
 
-    const classes = useStyles();
-
-    return  (
-        <div>
-            <section className='ervin'>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur, nisi.
-            </section>
-            <form className={classes.root} autoComplete='off'>
-                <FormControl>
-                    <InputLabel htmlFor='my-input'>Email address</InputLabel>
-                    <Input id='my-input' aria-describedby='my-helper-text' />
-                    <FormHelperText id='my-helper-text'>We'll not share your email</FormHelperText>
-                </FormControl>
-                <Input id='filled-basic' color='primary' />
-            </form>
-
+	return (
+	    <div>
+		    <Navbar bg="light" expand="lg">
+			    <Navbar.Brand href="#home">React-Bootstrap</Navbar.Brand>
+			    <Navbar.Toggle aria-controls="basic-navbar-nav" />
+			    <Navbar.Collapse id="basic-navbar-nav">
+				    <Nav className="mr-auto">
+					    <Nav.Link href="#home">Home</Nav.Link>
+					    <Nav.Link href="#link">Link</Nav.Link>
+					    <NavDropdown title="Dropdown" id="basic-nav-dropdown">
+						    <NavDropdown.Item href="/profile">Action</NavDropdown.Item>
+						    <NavDropdown.Item><NavLink to='/profile'>profile</NavLink></NavDropdown.Item>
+						    <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>
+						    <NavDropdown.Divider />
+						    <NavDropdown.Item href="#action/3.4">Separated link</NavDropdown.Item>
+					    </NavDropdown>
+				    </Nav>
+			    </Navbar.Collapse>
+		    </Navbar>
         </div>
-    )
+	)
 }
-
-
-
-
 
 /*
 const settingsForm = (props) => {

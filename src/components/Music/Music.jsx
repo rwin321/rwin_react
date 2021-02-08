@@ -5,9 +5,14 @@ import './music.scss'
 const Music = (props) => {
     return  (
         <>
-            <div className='music'>
-                Music
-            </div>
+            <nav className='nav'>
+                <div>
+                    <div>ervin</div>
+                    <div>ervin</div>
+                    <div>ervin</div>
+                    <div>ervin</div>
+                </div>
+            </nav>
         </>
     )
 }
