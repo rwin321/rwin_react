@@ -26,7 +26,7 @@ let Paginator: React.FC<PropsType> = (props) => {
     let leftPortionBorder = (portionNumber - 1) * portionSize + 1
     let rightPortionBorder = portionNumber * portionSize
 
-    let pages: Array<number> = []
+    const pages: Array<number> = []
     for (let i = 1; i <= pagesCount; i++) {
         pages.push(i)
     }

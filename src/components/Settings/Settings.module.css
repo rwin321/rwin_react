@@ -2,3 +2,23 @@
     display: flex;
     flex-direction: column;
 }
+
+.navMenu__item {
+    padding: 1rem;
+    border: 1px solid rgba(0,0,0,0.5);
+    max-width: 50%;
+    margin-top: 1rem;
+
+}
+.navMenu__item:hover {
+    background-color: rgba(0, 0, 0, 0.307);
+}
+
+.navMenu__itemLink {
+    font-size: 1.1rem;
+    font-weight: 500;
+}
+
+.navMenu__itemLink:hover {
+    text-decoration: none;
+}

@@ -34,4 +34,5 @@
 .addPostBtn {
     composes: deleteBtn from './Post/Post.module.css';
     margin-top: 1%;
+    padding: .5rem;
 }

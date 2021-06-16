@@ -38,6 +38,7 @@
     cursor: pointer;
     border-radius: 5px;
     margin: 1% 0 0 0;
+    padding: .5rem;
 }
 .sendMessageBtn:hover {
     box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 14px 40px 0 rgba(0,0,0,0.19);

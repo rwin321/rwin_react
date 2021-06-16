@@ -2,7 +2,6 @@ import React from 'react';
 import styles from "./user.module.css";
 import userPhoto from "../../assets/imgs/user.png";
 import {NavLink} from "react-router-dom";
-import {UsersType} from "../../types/types";
 
 type PropsType = {
     user: any

@@ -1,10 +1,10 @@
 import React from 'react'
 import s from './NewsItem.module.css'
 import { NavLink } from "react-router-dom";
+import newsPoster from '../../../assets/imgs/newsItem.png'
 
 const NewsItem = ({ id, newsBody, newsTitle }) => {
 	const path = '/news/' + `${ id }`
-	console.log(id)
 	return (
 		<div className={ s.container }>
 			<div className={ s.newsItem }>
@@ -13,7 +13,7 @@ const NewsItem = ({ id, newsBody, newsTitle }) => {
 				</div>
 					<NavLink to={ path }>
 						<img className={ s.img }
-						     src = 'https://www.hypeclothinga.com/wp-content/uploads/2019/07/Progetto-senza-titolo-170.jpg'
+						     src = {newsPoster}
 						     alt = 'rwin' />
 					</NavLink>
 				<div>

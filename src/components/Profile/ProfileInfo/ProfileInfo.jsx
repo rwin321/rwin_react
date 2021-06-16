@@ -9,7 +9,6 @@ const ProfileInfo = ({profile, ...props}) => {
 
     const [editMode, setEditMode] = useState(false)
 
-    if (!profile) return <Preloader/>
 
     const onMainProfilePhoto = (e) => {
         if (e.target.files.length) {
@@ -23,7 +22,7 @@ const ProfileInfo = ({profile, ...props}) => {
         })
     }
 
-    return (
+    return !profile ? <Preloader /> : (
         <div className={ s.profileInfoBlock }>
             <img src={ profile.photos.large || userPhoto} className={ s.photoCamera } />
             { props.isOwner &&

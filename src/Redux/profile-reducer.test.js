@@ -1,4 +1,3 @@
-import React from "react";
 import profileReducer, {addPost, deletePost} from "./profile-reducer";
 
 let state = {

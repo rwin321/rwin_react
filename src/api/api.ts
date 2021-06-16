@@ -96,6 +96,3 @@ export const profileAPI = {
         return instance.put('profile', profile)
     }
 }
-
-
-// const query = () => instance.get<MeResponseDataType>(`auh/me`).then( res => res.data.data.login.toLowerCase() )

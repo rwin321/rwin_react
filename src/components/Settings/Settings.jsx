@@ -1,49 +1,40 @@
-import React, {useState} from 'react'
+import React from 'react';
+import {NavLink} from 'react-router-dom'
 import s from './Settings.module.css'
-import Navbar from 'react-bootstrap/Navbar'
-import Nav from 'react-bootstrap/Nav'
-import NavDropdown from 'react-bootstrap//NavDropdown'
-import {NavLink} from "react-router-dom";
 
-const Settings = (props) => {
+const Settings = () => {
 
 	return (
-	    <div>
-		    <Navbar bg="light" expand="lg">
-			    <Navbar.Brand href="#home">React-Bootstrap</Navbar.Brand>
-			    <Navbar.Toggle aria-controls="basic-navbar-nav" />
-			    <Navbar.Collapse id="basic-navbar-nav">
-				    <Nav className="mr-auto">
-					    <Nav.Link href="#home">Home</Nav.Link>
-					    <Nav.Link href="#link">Link</Nav.Link>
-					    <NavDropdown title="Dropdown" id="basic-nav-dropdown">
-						    <NavDropdown.Item href="/profile">Action</NavDropdown.Item>
-						    <NavDropdown.Item><NavLink to='/profile'>profile</NavLink></NavDropdown.Item>
-						    <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>
-						    <NavDropdown.Divider />
-						    <NavDropdown.Item href="#action/3.4">Separated link</NavDropdown.Item>
-					    </NavDropdown>
-				    </Nav>
-			    </Navbar.Collapse>
-		    </Navbar>
-        </div>
+	    <section>
+			<ul className={s.navMenu}>
+				<li className={s.navMenu__item}>
+					<NavLink className={s.navMenu__itemLink} to='/settings'>
+						<span>Profile</span>
+					</NavLink>
+				</li>
+				<li className={s.navMenu__item}>
+					<NavLink className={s.navMenu__itemLink} to='/settings'>
+						<span>Сonfidentiality</span>
+					</NavLink>
+				</li>
+				<li className={s.navMenu__item}>
+					<NavLink className={s.navMenu__itemLink} to='/settings'>
+						<span>Access</span>
+					</NavLink>
+				</li>
+				<li className={s.navMenu__item}>
+					<NavLink className={s.navMenu__itemLink} to='/settings'>
+						<span>Preferences</span>
+					</NavLink>
+				</li>
+				<li className={s.navMenu__item}>
+					<NavLink className={s.navMenu__itemLink} to='/settings'>
+						<span>Advanced options</span>
+					</NavLink>
+				</li>
+			</ul>
+        </section>
 	)
 }
-
-/*
-const settingsForm = (props) => {
-    return (
-        <form onSubmit= { props.handleSubmit }>
-            <Field name="firstName" component="input" type="text" />
-
-        </form>
-    )
-}
-
-const SettingsReduxForm = reduxForm(
-    {
-        form: 'settings'
-    }
-)(settingsForm)*/
 
 export default Settings
